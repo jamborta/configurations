@@ -104,6 +104,13 @@ end
 //		)
 //end
 
+rule "Temp and Humidity Update"
+when
+	Time cron "0 * * * * ?"
+then
+	sendCommand(Sensor, "aAATEMP-----")
+end
+
 rule "Update max and min temperatures"
 when
 	Item Weather_Temperature changed or
