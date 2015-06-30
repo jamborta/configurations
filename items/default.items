@@ -1,0 +1,45 @@
+Group All
+Group Living_Room (All)
+Group Weather 	(All)
+
+Group Ligths_Control "Lights Control" 	<video> 	(Living_Room)
+
+
+/* active groups */
+Group:Switch:OR(ON, OFF) 		Lights 		"All Lights [(%d)]"    (All)
+
+/* Lights */
+Switch Light_LR_All_White   "All White"         (Ligths_Control)         {milight="bridge1;0"}
+Switch Light_LR_All_Color   "All Color"         (Ligths_Control)         {milight="bridge1;6"}  
+Switch Light_LR_Bulb1       "Bulb 1"            (Ligths_Control, Lights) {milight="bridge1;1"}
+Dimmer Light_LR_Bulb1_BR    "Bulb 1 Brightness" (Ligths_Control)         {milight="bridge1;1;brightness"}
+Dimmer Light_LR_Bulb1_CT    "Bulb 1 Color"      (Ligths_Control)         {milight="bridge1;1;colorTemperature"} 
+Switch Light_LR_Bulb2       "Bulb 2"            (Ligths_Control, Lights) {milight="bridge1;2"}
+Dimmer Light_LR_Bulb2_BR    "Bulb 2 Brightness" (Ligths_Control)         {milight="bridge1;2;brightness"}
+Dimmer Light_LR_Bulb2_CT    "Bulb 2 Color"      (Ligths_Control)         {milight="bridge1;2;colorTemperature"} 
+Switch Light_LR_Bulb3       "Bulb 3"            (Ligths_Control, Lights) {milight="bridge1;7"}  
+Dimmer Light_LR_Bulb3_BR    "Bulb 3 Brightness" (Ligths_Control)         {milight="bridge1;7;brightness"}
+Color  Light_LR_Bulb3_CT    "Bulb 3 Color"      (Ligths_Control)         {milight="bridge1;7;rgb"}           
+Switch  Light_LR_Bulb3_W    "Bulb 3 White"      (Ligths_Control)         {autoupdate="false", milight="bridge1;7;whiteMode"}           
+Switch Light_LR_Bulb4       "Bulb 4"            (Ligths_Control, Lights) {milight="bridge1;8"}  
+Dimmer Light_LR_Bulb4_BR    "Bulb 4 Brightness" (Ligths_Control)         {milight="bridge1;8;brightness"}
+Color  Light_LR_Bulb4_CT    "Bulb 4 Color"      (Ligths_Control)         {milight="bridge1;8;rgb"}           
+Switch Light_LR_Bulb4_W     "Bulb 4 White"      (Ligths_Control)         {autoupdate="false", milight="bridge1;8;whiteMode"}           
+
+Group Weather_Chart				(Weather)
+Group Humidity_Chart			(Weather)
+Number Weather_Temperature 		"Outside Temperature [%.1f °C]"	  <temperature>  (Weather_Chart) { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_temperature.xsl)]" }
+Number Weather_Humidity 		"Outside Humidity [%.1f %%]"	  <temperature>  (Humidity_Chart)       { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_humidity.xsl)]" }
+Number Weather_Pressure 		"Outside Air Pressure [%.1f]"  <temperature>     (Weather)       { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_pressure.xsl)]" }
+Number Weather_Humidex			"Humidex [SCALE(humidex.scale):%s]" 		     (Weather)
+Number Weather_Temp_Max 		"Todays Maximum [%.1f °C]"	      <temperature>  (Weather_Chart)
+Number Weather_Temp_Min 		"Todays Minimum [%.1f °C]"	      <temperature>  (Weather_Chart)
+Number Weather_Chart_Period		"Chart Period"
+Number Humidity_Chart_Period	"Humidity Chart Period"
+DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tR]"	<clock>
+
+
+
+
+
+
