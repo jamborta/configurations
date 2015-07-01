@@ -106,9 +106,12 @@ end
 
 rule "Temp and Humidity Update"
 when
-	Time cron "0 * * * * ?"
+	Item Sensor received update or 
+	Time cron "0 * * * * ?" or
+	System started
 then
 	sendCommand(Sensor, "aAATEMP-----")
+	logInfo("Sensor", "Update received " + Sensor)
 end
 
 rule "Update max and min temperatures"
