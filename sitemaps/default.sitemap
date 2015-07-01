@@ -5,7 +5,29 @@ sitemap demo label="Elizabeth House"
 		Switch item=Lights mappings=[OFF="All Off", ON="All On"]		
 	}
 	
-	Frame label="Weather" {
+	Frame label="Energy" {
+		Text item=Energy_Current {
+			Frame {
+				Text item=Energy_Today
+				Text item=Energy_Max
+				Text item=Energy_Yesterday
+			}
+			Frame {
+				Switch item=Energy_Current_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+				Chart item=Energy_Current_Group period=h refresh=6000 visibility=[Energy_Current_Period==0, Energy_Current_Period=="Uninitialized"]
+				Chart item=Energy_Current_Group period=D refresh=30000 visibility=[Energy_Current_Period==1]
+				Chart item=Energy_Current_Group period=W refresh=30000 visibility=[Energy_Current_Period==2]
+			}
+			Frame {
+				Switch item=Energy_Cum_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+				Chart item=Energy_Today_Group period=h refresh=6000 visibility=[Energy_Cum_Period==0, Energy_Cum_Period=="Uninitialized"]
+				Chart item=Energy_Today_Group period=D refresh=30000 visibility=[Energy_Cum_Period==1]
+				Chart item=Energy_Today_Group period=W refresh=30000 visibility=[Energy_Cum_Period==2]
+			}
+		}
+	
+		
+		
 		Text item=Weather_Temperature valuecolor=[Weather_LastUpdate=="Uninitialized"="lightgray",Weather_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
 			Frame {
 				Text item=Weather_Temp_Max valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
@@ -30,3 +52,4 @@ sitemap demo label="Elizabeth House"
 		}
 	}
 }
+

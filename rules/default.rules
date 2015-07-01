@@ -104,15 +104,15 @@ end
 //		)
 //end
 
-rule "Temp and Humidity Update"
-when
-	Item Sensor received update or 
-	Time cron "0 * * * * ?" or
-	System started
-then
-	sendCommand(Sensor, "aAATEMP-----")
-	logInfo("Sensor", "Update received " + Sensor)
-end
+//rule "Temp and Humidity Update"
+//when
+//	Item Sensor received update or 
+//	Time cron "0 * * * * ?" or
+//	System started
+//then
+//	sendCommand(Sensor, "aAATEMP-----")
+//	logInfo("Sensor", "Update received " + Sensor)
+//end
 
 rule "Update max and min temperatures"
 when
@@ -182,7 +182,7 @@ end
 // This rule will be used to test Scale transformation service
 rule "Compute humidex"
 when
-        Item Weather_Temperature changed or
+    Item Weather_Temperature changed or
 	Item Weather_Humidity changed
 then
 	var Number T = Weather_Temperature.state as DecimalType
