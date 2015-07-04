@@ -104,15 +104,29 @@ end
 //		)
 //end
 
-//rule "Temp and Humidity Update"
-//when
-//	Item Sensor received update or 
-//	Time cron "0 * * * * ?" or
-//	System started
-//then
-//	sendCommand(Sensor, "aAATEMP-----")
-//	logInfo("Sensor", "Update received " + Sensor)
-//end
+rule "Temp and Humidity Update"
+when
+	Item Sensor received update or 
+	Time cron "0 * * * * ?" or
+	System started
+then
+	sendCommand(Sensor, "aAATEMP-----")
+	println("Sensor received update -> " + Sensor)
+	var SensorUpdate = Sensor.state.toString.trim
+	var SensorSplit = SensorUpdate.split("-----")
+	SensorSplit.forEach[message|
+		logInfo("Sensor", "split message received" + message)
+		if (message.contains("TEMP")) {
+			logInfo("Sensor", "Temp message")			
+		} else {
+			logInfo("Sensor", "Non Temp message")			
+		}
+	]
+    if (SensorUpdate.contains("AATEMP")) {
+   
+    }
+	logInfo("Sensor", "Update received " + Sensor)
+end
 
 rule "Update max and min temperatures"
 when
