@@ -9,35 +9,36 @@ Group Ligths_Control_Bedroom 	"Lights Control" 	<video> 	(Bedroom)
 
 
 /* active groups */
-Group:Switch:OR(ON, OFF) 		Lights 		"All Lights [(%d)]"    (All)
+Group:Switch:OR(ON, OFF) 		Lights_LR		"Living Room Lights [(%d)]"    (All)
+Group:Switch:OR(ON, OFF) 		Lights_BR		"Bedroom Lights [(%d)]"    (All)
 
 /* Lights */
-Switch Light_LR_All_White   "All White"         (Ligths_Control)         {milight="bridge1;0"}
-Switch Light_LR_All_Color   "All Color"         (Ligths_Control)         {milight="bridge1;6"}  
-Switch Light_LR_Bulb1       "Bulb 1"            (Ligths_Control, Lights) {milight="bridge1;1"}
-Dimmer Light_LR_Bulb1_BR    "Bulb 1 Brightness" (Ligths_Control)         {milight="bridge1;1;brightness"}
-Dimmer Light_LR_Bulb1_CT    "Bulb 1 Color"      (Ligths_Control)         {milight="bridge1;1;colorTemperature"} 
-Switch Light_LR_Bulb2       "Bulb 2"            (Ligths_Control, Lights) {milight="bridge1;2"}
-Dimmer Light_LR_Bulb2_BR    "Bulb 2 Brightness" (Ligths_Control)         {milight="bridge1;2;brightness"}
-Dimmer Light_LR_Bulb2_CT    "Bulb 2 Color"      (Ligths_Control)         {milight="bridge1;2;colorTemperature"} 
-Switch Light_LR_Bulb3       "Bulb 3"            (Ligths_Control, Lights) {milight="bridge1;7"}  
-Dimmer Light_LR_Bulb3_BR    "Bulb 3 Brightness" (Ligths_Control)         {milight="bridge1;7;brightness"}
-Color  Light_LR_Bulb3_CT    "Bulb 3 Color"      (Ligths_Control)         {milight="bridge1;7;rgb"}           
-Switch  Light_LR_Bulb3_W    "Bulb 3 White"      (Ligths_Control)         {autoupdate="false", milight="bridge1;7;whiteMode"}           
-Switch Light_LR_Bulb4       "Bulb 4"            (Ligths_Control, Lights) {milight="bridge1;8"}  
-Dimmer Light_LR_Bulb4_BR    "Bulb 4 Brightness" (Ligths_Control)         {milight="bridge1;8;brightness"}
-Color  Light_LR_Bulb4_CT    "Bulb 4 Color"      (Ligths_Control)         {milight="bridge1;8;rgb"}           
-Switch Light_LR_Bulb4_W     "Bulb 4 White"      (Ligths_Control)         {autoupdate="false", milight="bridge1;8;whiteMode"}           
+Switch Light_LR_All_White   "All White"         (Ligths_Control)          	{milight="bridge1;0"}
+Switch Light_LR_All_Color   "All Color"         (Ligths_Control)           	{milight="bridge1;6"}  
+Switch Light_LR_Bulb1       "Bulb 1"            (Ligths_Control, Lights_LR) {milight="bridge1;1"}
+Dimmer Light_LR_Bulb1_BR    "Bulb 1 Brightness" (Ligths_Control)         	{milight="bridge1;1;brightness"}
+Dimmer Light_LR_Bulb1_CT    "Bulb 1 Color"      (Ligths_Control)         	{milight="bridge1;1;colorTemperature"} 
+Switch Light_LR_Bulb2       "Bulb 2"            (Ligths_Control, Lights_LR)	{milight="bridge1;2"}
+Dimmer Light_LR_Bulb2_BR    "Bulb 2 Brightness" (Ligths_Control)         	{milight="bridge1;2;brightness"}
+Dimmer Light_LR_Bulb2_CT    "Bulb 2 Color"      (Ligths_Control)         	{milight="bridge1;2;colorTemperature"} 
+Switch Light_LR_Bulb3       "Bulb 3"            (Ligths_Control, Lights_LR) {milight="bridge1;7"}  
+Dimmer Light_LR_Bulb3_BR    "Bulb 3 Brightness" (Ligths_Control)         	{milight="bridge1;7;brightness"}
+Color  Light_LR_Bulb3_CT    "Bulb 3 Color"      (Ligths_Control)        	{milight="bridge1;7;rgb"}           
+Switch  Light_LR_Bulb3_W    "Bulb 3 White"      (Ligths_Control)         	{autoupdate="false", milight="bridge1;7;whiteMode"}           
+Switch Light_LR_Bulb4       "Bulb 4"            (Ligths_Control, Lights_LR) {milight="bridge1;8"}  
+Dimmer Light_LR_Bulb4_BR    "Bulb 4 Brightness" (Ligths_Control)         	{milight="bridge1;8;brightness"}
+Color  Light_LR_Bulb4_CT    "Bulb 4 Color"      (Ligths_Control)         	{milight="bridge1;8;rgb"}           
+Switch Light_LR_Bulb4_W     "Bulb 4 White"      (Ligths_Control)         	{autoupdate="false", milight="bridge1;8;whiteMode"}           
 
 /* Bedroom lights */
-Switch Light_LR_Bulb5       "Bulb 1"            (Ligths_Control, Lights) {milight="bridge1;7"}  
-Dimmer Light_LR_Bulb5_BR    "Bulb 1 Brightness" (Ligths_Control)         {milight="bridge1;7;brightness"}
-Color  Light_LR_Bulb5_CT    "Bulb 1 Color"      (Ligths_Control)         {milight="bridge1;7;rgb"}           
-Switch  Light_LR_Bulb5_W    "Bulb 1 White"      (Ligths_Control)         {autoupdate="false", milight="bridge1;7;whiteMode"}           
-Switch Light_LR_Bulb6       "Bulb 1"            (Ligths_Control, Lights) {milight="bridge1;8"}  
-Dimmer Light_LR_Bulb6_BR    "Bulb 1 Brightness" (Ligths_Control)         {milight="bridge1;8;brightness"}
-Color  Light_LR_Bulb6_CT    "Bulb 1 Color"      (Ligths_Control)         {milight="bridge1;8;rgb"}           
-Switch Light_LR_Bulb6_W     "Bulb 1 White"      (Ligths_Control)         {autoupdate="false", milight="bridge1;8;whiteMode"}        
+Switch Light_LR_Bulb5       "Bulb 1"            (Ligths_Control_Bedroom, Lights_BR)	{milight="bridge1;9"}  
+Dimmer Light_LR_Bulb5_BR    "Bulb 1 Brightness" (Ligths_Control_Bedroom)         	{milight="bridge1;9;brightness"}
+Color  Light_LR_Bulb5_CT    "Bulb 1 Color"      (Ligths_Control_Bedroom)         	{milight="bridge1;9;rgb"}           
+Switch  Light_LR_Bulb5_W    "Bulb 1 White"      (Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;9;whiteMode"}           
+Switch Light_LR_Bulb6       "Bulb 2"            (Ligths_Control_Bedroom, Lights_BR) {milight="bridge1;10"}  
+Dimmer Light_LR_Bulb6_BR    "Bulb 2 Brightness" (Ligths_Control_Bedroom)      	    {milight="bridge1;10;brightness"}
+Color  Light_LR_Bulb6_CT    "Bulb 2 Color"      (Ligths_Control_Bedroom)         	{milight="bridge1;10;rgb"}           
+Switch Light_LR_Bulb6_W     "Bulb 2 White"      (Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;10;whiteMode"}        
 
 Group Weather_Chart				(Weather)
 Group Humidity_Chart			(Weather)
