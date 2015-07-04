@@ -1,9 +1,11 @@
 Group All
 Group Living_Room (All)
+Group Bedroom (All)
 Group Weather 	(All)
 Group Energy    (All)
 
-Group Ligths_Control "Lights Control" 	<video> 	(Living_Room)
+Group Ligths_Control 			"Lights Control" 	<video> 	(Living_Room)
+Group Ligths_Control_Bedroom 	"Lights Control" 	<video> 	(Bedroom)
 
 
 /* active groups */
@@ -26,6 +28,16 @@ Switch Light_LR_Bulb4       "Bulb 4"            (Ligths_Control, Lights) {miligh
 Dimmer Light_LR_Bulb4_BR    "Bulb 4 Brightness" (Ligths_Control)         {milight="bridge1;8;brightness"}
 Color  Light_LR_Bulb4_CT    "Bulb 4 Color"      (Ligths_Control)         {milight="bridge1;8;rgb"}           
 Switch Light_LR_Bulb4_W     "Bulb 4 White"      (Ligths_Control)         {autoupdate="false", milight="bridge1;8;whiteMode"}           
+
+/* Bedroom lights */
+Switch Light_LR_Bulb5       "Bulb 1"            (Ligths_Control, Lights) {milight="bridge1;7"}  
+Dimmer Light_LR_Bulb5_BR    "Bulb 1 Brightness" (Ligths_Control)         {milight="bridge1;7;brightness"}
+Color  Light_LR_Bulb5_CT    "Bulb 1 Color"      (Ligths_Control)         {milight="bridge1;7;rgb"}           
+Switch  Light_LR_Bulb5_W    "Bulb 1 White"      (Ligths_Control)         {autoupdate="false", milight="bridge1;7;whiteMode"}           
+Switch Light_LR_Bulb6       "Bulb 1"            (Ligths_Control, Lights) {milight="bridge1;8"}  
+Dimmer Light_LR_Bulb6_BR    "Bulb 1 Brightness" (Ligths_Control)         {milight="bridge1;8;brightness"}
+Color  Light_LR_Bulb6_CT    "Bulb 1 Color"      (Ligths_Control)         {milight="bridge1;8;rgb"}           
+Switch Light_LR_Bulb6_W     "Bulb 1 White"      (Ligths_Control)         {autoupdate="false", milight="bridge1;8;whiteMode"}        
 
 Group Weather_Chart				(Weather)
 Group Humidity_Chart			(Weather)

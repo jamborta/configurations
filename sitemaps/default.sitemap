@@ -2,7 +2,9 @@ sitemap demo label="Elizabeth House"
 {
 	Frame {
 		Group item=Living_Room label="Living Room" icon="groundfloor"
-		Switch item=Lights mappings=[OFF="All Off", ON="All On"]		
+		Group item=Bedroom label="Bedroom" icon="groundfloor"
+		Switch item=Lights_LR mappings=[OFF="All Off", ON="All On"]		
+		Switch item=Lights_BR mappings=[OFF="All Off", ON="All On"]		
 	}
 	
 	Frame label="Energy" {
