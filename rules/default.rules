@@ -107,7 +107,7 @@ end
 rule "Temp and Humidity Update"
 when
 	Item Sensor received update or 
-	Time cron "2 * * * * ?" or
+	Time cron "*/2 * * * * ?" or
 	System started
 then
 	sendCommand(Sensor, "aAATEMP-----")
