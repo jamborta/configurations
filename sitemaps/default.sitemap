@@ -2,7 +2,7 @@ sitemap demo label="Elizabeth House"
 {
 	Frame {
 		Group item=Living_Room label="Living Room" icon="groundfloor"
-		Group item=Bedroom label="Bedroom" icon="groundfloor"
+		Group item=Bedroom label="Bedroom" icon="bedroom"
 		Switch item=Lights_LR mappings=[OFF="All Off", ON="All On"]		
 		Switch item=Lights_BR mappings=[OFF="All Off", ON="All On"]		
 	}
@@ -29,7 +29,7 @@ sitemap demo label="Elizabeth House"
 		}
 	
 		
-		Text item=Sensor_AB valuecolor=[Sensor_LastUpdate=="Uninitialized"="lightgray",Sensor_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
+		Text item=Sensor_AA valuecolor=[Sensor_LastUpdate=="Uninitialized"="lightgray",Sensor_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
 			Frame {
 				Text item=Sensor_AA valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Sensor_AB valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
