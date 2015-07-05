@@ -124,11 +124,13 @@ then
 		logInfo("Sensor", "Sensor update: " + message)
 		if (message.contains("AWAKE")) {
 			var id = message.substring(0, 2)
-			logInfo("Sensor", "Sensor " + id + "is awake")
+			logInfo("Sensor", "Sensor " + id + " is awake")
 			var temperatureCommand = "a" + id + "TEMP-----"
 			Sensor.sendCommand(temperatureCommand)
 		} else if (message.contains("TEMP") && !message.contains('-')){
-			logInfo("Sensor", "Temperature measurement " + message)
+			var temp = message.substring(5)
+			Sensor_AA.postUpdate(temp)
+			logInfo("Sensor", "Temperature measurement " + temp)
 			var id = message.substring(0, 2)
 			var sleepCommand = "a" + id + "SLEEP" + "001M"
 			Sensor.sendCommand(sleepCommand)					

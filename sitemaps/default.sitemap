@@ -37,6 +37,7 @@ sitemap demo label="Elizabeth House"
 				Text item=Weather_Pressure
 				Text item=Weather_Humidity
 				Text item=Weather_Humidex
+				Text item=Sensor_AA
 				Text item=Weather_LastUpdate visibility=[Weather_LastUpdate>30] valuecolor=[Weather_LastUpdate>120="orange", Weather_LastUpdate>300="red"]
 			}
 			Frame {
