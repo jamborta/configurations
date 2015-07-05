@@ -107,7 +107,7 @@ end
 
 rule "Temp trigger"
 when
-	Time cron "* */1 * * * ?" or
+	Time cron "* * */1 * * ?" or
 	System started
 then
 	var id = "AA"
@@ -132,7 +132,7 @@ then
 			logInfo("Sensor", "Temperature measurement " + temp)
 			Sensor_AA.postUpdate(temp)
 			var id = message.substring(0, 2)
-			var sleepCommand = "a" + id + "SLEEP" + "010M"
+			var sleepCommand = "a" + id + "SLEEP" + "015M"
 			Sensor.sendCommand(sleepCommand)					
 		}
 	]
