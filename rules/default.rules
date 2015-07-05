@@ -107,7 +107,7 @@ end
 
 rule "Temp trigger"
 when
-	Time cron "*/30 * * * * ?" or
+	Time cron "0 */15 * * * ?" or
 	System started
 then
 	var id = "AA"
