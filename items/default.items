@@ -53,8 +53,9 @@ Number Humidity_Chart_Period	"Humidity Chart Period"
 DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tR]"	<clock>
 
 
-Number Sensor_AA "Living Room Temperature [%.1f °C]" <temperature> (Weather)
-Number Sensor_AC "Guestroom Temperature [%.1f °C]" <temperature> (Weather)
+Number Sensor_AA "Bedroom Temperature [%.1f °C]" <temperature> (Weather)
+Number Sensor_AB "Bedroom Temperature [%.1f °C]" <temperature> (Weather)
+Number Sensor_AC "Guest room Temperature [%.1f °C]" <temperature> (Weather)
 
 
 String Sensor "Sensor" (Control)  { serial="/dev/ttyAMA0" }

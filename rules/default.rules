@@ -120,7 +120,9 @@ when
 then
 	var SensorUpdate = Sensor.state.toString.trim.split("a")
 	SensorUpdate.forEach[message|
-		logInfo("Sensor", "Sensor update: " + message)
+		if (message.length() > 0){
+			logInfo("Sensor", "Sensor update: " + message)
+		}
 		if (message.contains("AWAKE")) {
 			var id = message.substring(0, 2)
 			logInfo("Sensor", "Sensor " + id + " is awake")
@@ -132,6 +134,8 @@ then
 			var id = message.substring(0, 2)
 			if (id.equals("AA")){
 				Sensor_AA.postUpdate(temp)
+			} else if (id.equals("AB")){
+				Sensor_AB.postUpdate(temp)				
 			} else if (id.equals("AC")){
 				Sensor_AC.postUpdate(temp)				
 			}
