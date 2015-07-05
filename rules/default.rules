@@ -128,7 +128,7 @@ then
 			var temperatureCommand = "a" + id + "TEMP-----"
 			Sensor.sendCommand(temperatureCommand)
 		} else if (message.contains("TEMP") && !message.contains('-')){
-			var temp = message.substring(5)
+			var temp = message.substring(6)
 			logInfo("Sensor", "Temperature measurement " + temp)
 			Sensor_AA.postUpdate(temp)
 			var id = message.substring(0, 2)
