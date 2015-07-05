@@ -110,9 +110,8 @@ when
 	Time cron "0 */15 * * * ?" or
 	System started
 then
-	var id = "AA"
-	var temperatureCommand = "a" + id + "TEMP-----"
-	Sensor.sendCommand(temperatureCommand)
+	Sensor.sendCommand("aAATEMP-----")
+	Sensor.sendCommand("aACTEMP-----")
 end
 
 rule "Temp Update"
@@ -130,8 +129,13 @@ then
 		} else if (message.contains("TEMP") && !message.contains('-')){
 			var temp = message.substring(6)
 			logInfo("Sensor", "Temperature measurement " + temp)
-			Sensor_AA.postUpdate(temp)
 			var id = message.substring(0, 2)
+			if (id.equals("AA")){
+				Sensor_AA.postUpdate(temp)
+			} else if (id.equals("AC")){
+				Sensor_AC.postUpdate(temp)				
+			}
+			
 			var sleepCommand = "a" + id + "SLEEP" + "015M"
 			Sensor.sendCommand(sleepCommand)					
 		}
