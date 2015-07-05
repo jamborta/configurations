@@ -104,29 +104,62 @@ end
 //		)
 //end
 
-rule "Temp and Humidity Update"
+
+rule "Temp trigger"
 when
-	Item Sensor received update or 
-	Time cron "*/2 * * * * ?" or
+	Time cron "*/30 * * * * ?" or
 	System started
 then
-	sendCommand(Sensor, "aAATEMP-----")
-	println("Sensor received update -> " + Sensor)
-	var SensorUpdate = Sensor.state.toString.trim
-	var SensorSplit = SensorUpdate.split("-----")
-	SensorSplit.forEach[message|
-		logInfo("Sensor", "split message received" + message)
-		if (message.contains("TEMP")) {
-			logInfo("Sensor", "Temp message")			
-		} else {
-			logInfo("Sensor", "Non Temp message")			
+	var id = "AA"
+	var temperatureCommand = "a" + id + "TEMP-----"
+	Sensor.sendCommand(temperatureCommand)
+end
+
+rule "Temp Update"
+when
+    Item Sensor received update
+then
+	var SensorUpdate = Sensor.state.toString.trim.split("a")
+	SensorUpdate.forEach[message|
+		logInfo("Sensor", "Sensor update: " + message)
+		if (message.contains("AWAKE")) {
+			var id = message.substring(0, 2)
+			logInfo("Sensor", "Sensor " + id + "is awake")
+			var temperatureCommand = "a" + id + "TEMP-----"
+			Sensor.sendCommand(temperatureCommand)
+		} else if (message.contains("TEMP") && !message.contains('-')){
+			logInfo("Sensor", "Temperature measurement " + message)
+			var id = message.substring(0, 2)
+			var sleepCommand = "a" + id + "SLEEP" + "001M"
+			Sensor.sendCommand(sleepCommand)					
 		}
 	]
-    if (SensorUpdate.contains("AATEMP")) {
-   
-    }
-	logInfo("Sensor", "Update received " + Sensor)
 end
+
+//rule "Temp and Humidity Update"
+//when
+//	Item Sensor received update or  
+//	Time cron "*/2 * * * * ?" or
+//	System started
+//then
+//	
+////	sendCommand(Sensor, "aAATEMP-----")
+//	logInfo("Sensor", "Sensor received update -> " + Sensor)
+////	var SensorUpdate = Sensor.state.toString.trim
+////	var SensorSplit = SensorUpdate.split("a")
+////	SensorSplit.forEach[message|
+////		logInfo("Sensor", "split message received: " + message)
+////		if (message.contains("TEMP")) {
+////			logInfo("Sensor", "Temp message")			
+////		} else {
+////			logInfo("Sensor", "Non Temp message")			
+////		}
+////	]
+////    if (SensorUpdate.contains("AATEMP")) {
+////   
+////    }
+////	logInfo("Sensor", "Update received " + Sensor)
+//end
 
 rule "Update max and min temperatures"
 when
