@@ -40,6 +40,7 @@ sitemap demo label="Elizabeth House"
 				Text item=Sensor_AA
 				Text item=Sensor_AB
 				Text item=Sensor_AC
+				Text item=Sensor_AD
 				Text item=Weather_LastUpdate visibility=[Weather_LastUpdate>30] valuecolor=[Weather_LastUpdate>120="orange", Weather_LastUpdate>300="red"]
 			}
 			Frame {

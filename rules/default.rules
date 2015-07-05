@@ -111,7 +111,9 @@ when
 	System started
 then
 	Sensor.sendCommand("aAATEMP-----")
+	Sensor.sendCommand("aABTEMP-----")
 	Sensor.sendCommand("aACTEMP-----")
+	Sensor.sendCommand("aADTEMP-----")
 end
 
 rule "Temp Update"
@@ -138,8 +140,9 @@ then
 				Sensor_AB.postUpdate(temp)				
 			} else if (id.equals("AC")){
 				Sensor_AC.postUpdate(temp)				
-			}
-			
+			} else if (id.equals("AD")){
+				Sensor_AD.postUpdate(temp)				
+			}			
 			var sleepCommand = "a" + id + "SLEEP" + "015M"
 			Sensor.sendCommand(sleepCommand)					
 		}

@@ -56,6 +56,7 @@ DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tR]"	<clock>
 Number Sensor_AA "Bedroom Temperature [%.1f °C]" <temperature> (Weather)
 Number Sensor_AB "Bedroom Temperature [%.1f °C]" <temperature> (Weather)
 Number Sensor_AC "Guest room Temperature [%.1f °C]" <temperature> (Weather)
+Number Sensor_AD "Outside Temperature [%.1f °C]" <temperature> (Weather)
 
 
 String Sensor "Sensor" (Control)  { serial="/dev/ttyAMA0" }
