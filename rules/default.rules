@@ -136,43 +136,22 @@ then
 			var id = message.substring(0, 2)
 			if (id.equals("AA")){
 				Sensor_AA.postUpdate(temp)
+				postUpdate(Sensor_LastUpdate, new DateTimeType())
 			} else if (id.equals("AB")){
-				Sensor_AB.postUpdate(temp)				
+				Sensor_AB.postUpdate(temp)
+				postUpdate(Sensor_LastUpdate, new DateTimeType())
 			} else if (id.equals("AC")){
 				Sensor_AC.postUpdate(temp)				
+				postUpdate(Sensor_LastUpdate, new DateTimeType())	
 			} else if (id.equals("AD")){
 				Sensor_AD.postUpdate(temp)				
+				postUpdate(Sensor_LastUpdate, new DateTimeType())
 			}			
 			var sleepCommand = "a" + id + "SLEEP" + "015M"
 			Sensor.sendCommand(sleepCommand)					
 		}
 	]
 end
-
-//rule "Temp and Humidity Update"
-//when
-//	Item Sensor received update or  
-//	Time cron "*/2 * * * * ?" or
-//	System started
-//then
-//	
-////	sendCommand(Sensor, "aAATEMP-----")
-//	logInfo("Sensor", "Sensor received update -> " + Sensor)
-////	var SensorUpdate = Sensor.state.toString.trim
-////	var SensorSplit = SensorUpdate.split("a")
-////	SensorSplit.forEach[message|
-////		logInfo("Sensor", "split message received: " + message)
-////		if (message.contains("TEMP")) {
-////			logInfo("Sensor", "Temp message")			
-////		} else {
-////			logInfo("Sensor", "Non Temp message")			
-////		}
-////	]
-////    if (SensorUpdate.contains("AATEMP")) {
-////   
-////    }
-////	logInfo("Sensor", "Update received " + Sensor)
-//end
 
 rule "Update max and min temperatures"
 when
@@ -232,12 +211,12 @@ end
 //end
 
 // Creates an item that stores the last update time of this item
-//rule "Records last weather update time"
-//when
-//  Item Weather_Temperature received update
-//then
-//  postUpdate(Weather_LastUpdate, new DateTimeType())
-//end
+rule "Records last weather update time"
+when
+  Item Weather_Temperature received update
+then
+  postUpdate(Weather_LastUpdate, new DateTimeType())
+end
 
 // This rule will be used to test Scale transformation service
 rule "Compute humidex"

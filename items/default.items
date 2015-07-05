@@ -46,17 +46,19 @@ Number Weather_Temperature 		"Outside Temperature [%.1f °C]"	  <temperature>  (
 Number Weather_Humidity 		"Outside Humidity [%.1f %%]"	  <temperature>  (Humidity_Chart)       { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_humidity.xsl)]" }
 Number Weather_Pressure 		"Outside Air Pressure [%.1f]"  <temperature>     (Weather)       { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_pressure.xsl)]" }
 Number Weather_Humidex			"Humidex [SCALE(humidex.scale):%s]" 		     (Weather)
-Number Weather_Temp_Max 		"Todays Maximum [%.1f °C]"	      <temperature>  (Weather_Chart)
-Number Weather_Temp_Min 		"Todays Minimum [%.1f °C]"	      <temperature>  (Weather_Chart)
+Number Weather_Temp_Max 		"Todays Maximum [%.1f °C]"	      <temperature>  (Weather)
+Number Weather_Temp_Min 		"Todays Minimum [%.1f °C]"	      <temperature>  (Weather)
 Number Weather_Chart_Period		"Chart Period"
 Number Humidity_Chart_Period	"Humidity Chart Period"
 DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tR]"	<clock>
 
-
-Number Sensor_AA "Bedroom Temperature [%.1f °C]" <temperature> (Weather)
-Number Sensor_AB "Living Room Temperature [%.1f °C]" <temperature> (Weather)
-Number Sensor_AC "Guest room Temperature [%.1f °C]" <temperature> (Weather)
-Number Sensor_AD "Outside Temperature [%.1f °C]" <temperature> (Weather)
+Group Sensor_Chart				(Weather)
+Number Sensor_AA "Bedroom Temperature [%.1f °C]" <temperature> (Sensor_Chart)
+Number Sensor_AB "Living Room Temperature [%.1f °C]" <temperature> (Sensor_Chart)
+Number Sensor_AC "Guest room Temperature [%.1f °C]" <temperature> (Sensor_Chart)
+Number Sensor_AD "Outside Temperature [%.1f °C]" <temperature> (Sensor_Chart)
+Number Sensor_Chart_Period		"Sensor Chart Period"
+DateTime Sensor_LastUpdate		"Last Update [%1$ta %1$tR]"	<clock>
 
 
 String Sensor "Sensor" (Control)  { serial="/dev/ttyAMA0" }

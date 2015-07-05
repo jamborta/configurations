@@ -29,18 +29,30 @@ sitemap demo label="Elizabeth House"
 		}
 	
 		
+		Text item=Sensor_AB valuecolor=[Sensor_LastUpdate=="Uninitialized"="lightgray",Sensor_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
+			Frame {
+				Text item=Sensor_AA valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Sensor_AB valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Sensor_AC valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Sensor_AD valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Sensor_LastUpdate visibility=[Sensor_LastUpdate>30] valuecolor=[Sensor_LastUpdate>120="orange", Sensor_LastUpdate>300="red"]
+			}
+			Frame {
+				Switch item=Sensor_Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+				Chart item=Sensor_Chart period=h refresh=6000 visibility=[Sensor_Chart_Period==0, Sensor_Chart_Period=="Uninitialized"]
+				Chart item=Sensor_Chart period=D refresh=30000 visibility=[Sensor_Chart_Period==1]
+				Chart item=Sensor_Chart period=W refresh=30000 visibility=[Sensor_Chart_Period==2]
+			}
+		}
 		
 		Text item=Weather_Temperature valuecolor=[Weather_LastUpdate=="Uninitialized"="lightgray",Weather_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
 			Frame {
+				Text item=Weather_Temperature valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Weather_Temp_Max valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Weather_Temp_Min valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Weather_Pressure
 				Text item=Weather_Humidity
 				Text item=Weather_Humidex
-				Text item=Sensor_AA
-				Text item=Sensor_AB
-				Text item=Sensor_AC
-				Text item=Sensor_AD
 				Text item=Weather_LastUpdate visibility=[Weather_LastUpdate>30] valuecolor=[Weather_LastUpdate>120="orange", Weather_LastUpdate>300="red"]
 			}
 			Frame {
