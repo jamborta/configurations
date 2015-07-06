@@ -53,10 +53,10 @@ Number Humidity_Chart_Period	"Humidity Chart Period"
 DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tR]"	<clock>
 
 Group Sensor_Chart				(Weather)
-Number Sensor_AA "Bedroom Temperature [%.1f °C]" <temperature> (Sensor_Chart)
-Number Sensor_AB "Living Room Temperature [%.1f °C]" <temperature> (Sensor_Chart)
-Number Sensor_AC "Guest room Temperature [%.1f °C]" <temperature> (Sensor_Chart)
-Number Sensor_AD "Outside Temperature [%.1f °C]" <temperature> (Sensor_Chart)
+Number Sensor_AA "Bedroom Temperature [%.1f °C]" 		<temperature> (Sensor_Chart)
+Number Sensor_AB "Living Room Temperature [%.1f °C]" 	<temperature> (Sensor_Chart)
+Number Sensor_AC "Guest room Temperature [%.1f °C]" 	<temperature> (Sensor_Chart)
+Number Sensor_AD "Outside Temperature [%.1f °C]" 		<temperature> (Sensor_Chart)
 Number Sensor_Chart_Period		"Sensor Chart Period"
 DateTime Sensor_LastUpdate		"Last Update [%1$ta %1$tR]"	<clock>
 
