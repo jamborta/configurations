@@ -2,6 +2,7 @@
 Strategies {
 	everyHour 	: "0 0 * * * ?"
 	everyDay 	: "0 0 0 * * ?"
+	everyMinute : "0 * * * * ?"
 
 	// if no strategy is specified for an item entry below, the default list will be used
 	default = everyChange
@@ -18,5 +19,10 @@ Items {
 	// * : strategy = everyChange, everyDay, restoreOnStartup
 	
 	// persist all temperature and weather values at every change and every hour
-	Temperature*, Weather* : strategy = everyChange, everyHour
+	Temperature*, Weather* : strategy = everyChange, restoreOnStartup
+	DemoSwitch,NoOfLights,Window_GF_Toilet,Heating* : strategy = everyChange, restoreOnStartup
+	
+	Temperature*,Weather_Chart*,Humidity_Chart*,Weather_Pressure : strategy = everyChange, restoreOnStartup
+	Energy_Today, Energy_Current : strategy = everyChange, restoreOnStartup
+	Sensor_AA, Sensor_AB, Sensor_AC, Sensor_AD : strategy = everyChange, restoreOnStartup
 }
