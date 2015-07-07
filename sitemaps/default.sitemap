@@ -29,7 +29,7 @@ sitemap demo label="Elizabeth House"
 		}
 	
 		
-		Text item=Sensor_AA valuecolor=[Sensor_LastUpdate=="Uninitialized"="lightgray",Sensor_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
+		Text item=Sensor_AA valuecolor=[Sensor_AA=="Uninitialized"="lightgray",Sensor_LastUpdate_AA>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
 			Frame {
 				Text item=Sensor_AA valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Sensor_AB valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
