@@ -136,16 +136,16 @@ then
 			var id = message.substring(0, 2)
 			if (id.equals("AA")){
 				Sensor_AA.postUpdate(temp)
-				postUpdate(Sensor_LastUpdate, new DateTimeType())
+				postUpdate(Sensor_LastUpdate_AA, new DateTimeType())
 			} else if (id.equals("AB")){
 				Sensor_AB.postUpdate(temp)
-				postUpdate(Sensor_LastUpdate, new DateTimeType())
+				postUpdate(Sensor_LastUpdate_AB, new DateTimeType())
 			} else if (id.equals("AC")){
 				Sensor_AC.postUpdate(temp)				
-				postUpdate(Sensor_LastUpdate, new DateTimeType())	
+				postUpdate(Sensor_LastUpdate_AC, new DateTimeType())	
 			} else if (id.equals("AD")){
 				Sensor_AD.postUpdate(temp)				
-				postUpdate(Sensor_LastUpdate, new DateTimeType())
+				postUpdate(Sensor_LastUpdate_AD, new DateTimeType())
 			}			
 			var sleepCommand = "a" + id + "SLEEP" + "015M"
 			Sensor.sendCommand(sleepCommand)					

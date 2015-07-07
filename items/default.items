@@ -61,7 +61,11 @@ Number Sensor_AB 				"Living Room Temperature [%.1f °C]" 	<temperature> 	(Senso
 Number Sensor_AC 				"Guest room Temperature [%.1f °C]"	 	<temperature> 	(Sensor_Chart)
 Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
 Number Sensor_Chart_Period		"Sensor Chart Period"
-DateTime Sensor_LastUpdate		"Last Update [%1$ta %1$tR]"				<clock>
+DateTime Sensor_LastUpdate_AA		"Last Update (Bedroom) [%1$ta %1$tR]"				<clock>
+DateTime Sensor_LastUpdate_AB		"Last Update (Living Room) [%1$ta %1$tR]"			<clock>
+DateTime Sensor_LastUpdate_AC		"Last Update (Guest room) [%1$ta %1$tR]"			<clock>
+DateTime Sensor_LastUpdate_AD		"Last Update (Outside) [%1$ta %1$tR]"				<clock>
+
 
 /* Energy measurements */
 Group Energy_Today_Group

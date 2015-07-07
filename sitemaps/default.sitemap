@@ -35,7 +35,10 @@ sitemap demo label="Elizabeth House"
 				Text item=Sensor_AB valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Sensor_AC valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Sensor_AD valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
-				Text item=Sensor_LastUpdate visibility=[Sensor_LastUpdate>30] valuecolor=[Sensor_LastUpdate>120="orange", Sensor_LastUpdate>300="red"]
+				Text item=Sensor_LastUpdate_AA visibility=[Sensor_LastUpdate>1400] valuecolor=[Sensor_LastUpdate>1700="orange", Sensor_LastUpdate>2000="red"]
+				Text item=Sensor_LastUpdate_AB visibility=[Sensor_LastUpdate>1400] valuecolor=[Sensor_LastUpdate>1700="orange", Sensor_LastUpdate>2000="red"]
+				Text item=Sensor_LastUpdate_AC visibility=[Sensor_LastUpdate>1400] valuecolor=[Sensor_LastUpdate>1700="orange", Sensor_LastUpdate>2000="red"]
+				Text item=Sensor_LastUpdate_AD visibility=[Sensor_LastUpdate>1400] valuecolor=[Sensor_LastUpdate>1700="orange", Sensor_LastUpdate>2000="red"]				
 			}
 			Frame {
 				Switch item=Sensor_Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
