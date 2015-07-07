@@ -32,40 +32,43 @@ Switch Light_LR_Bulb4_W     "Bulb 4 White"      (Ligths_Control)         	{autou
 
 /* Bedroom lights */
 Switch Light_LR_Bulb5       "Tamas' Light 1"            (Ligths_Control_Bedroom, Lights_BR)	{milight="bridge1;9"}  
-Dimmer Light_LR_Bulb5_BR    "Tamas' Light Brightness" (Ligths_Control_Bedroom)         	{milight="bridge1;9;brightness"}
-Color  Light_LR_Bulb5_CT    "Tamas' Light Color"      (Ligths_Control_Bedroom)         	{milight="bridge1;9;rgb"}           
-Switch  Light_LR_Bulb5_W    "Tamas' Light White"      (Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;9;whiteMode"}           
-Switch Light_LR_Bulb6       "Jju's Light"            (Ligths_Control_Bedroom, Lights_BR) {milight="bridge1;10"}  
-Dimmer Light_LR_Bulb6_BR    "Jju's Light Brightness" (Ligths_Control_Bedroom)      	    {milight="bridge1;10;brightness"}
-Color  Light_LR_Bulb6_CT    "Jju's Light Color"      (Ligths_Control_Bedroom)         	{milight="bridge1;10;rgb"}           
-Switch Light_LR_Bulb6_W     "Jju's Light White"      (Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;10;whiteMode"}        
+Dimmer Light_LR_Bulb5_BR    "Tamas' Light Brightness" 	(Ligths_Control_Bedroom)         	{milight="bridge1;9;brightness"}
+Color  Light_LR_Bulb5_CT    "Tamas' Light Color"      	(Ligths_Control_Bedroom)         	{milight="bridge1;9;rgb"}           
+Switch  Light_LR_Bulb5_W    "Tamas' Light White"      	(Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;9;whiteMode"}           
+Switch Light_LR_Bulb6       "Jju's Light"           	(Ligths_Control_Bedroom, Lights_BR) {milight="bridge1;10"}  
+Dimmer Light_LR_Bulb6_BR    "Jju's Light Brightness" 	(Ligths_Control_Bedroom)      	    {milight="bridge1;10;brightness"}
+Color  Light_LR_Bulb6_CT    "Jju's Light Color"      	(Ligths_Control_Bedroom)         	{milight="bridge1;10;rgb"}           
+Switch Light_LR_Bulb6_W     "Jju's Light White"      	(Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;10;whiteMode"}        
 
+/* Yahoo temperature measurements */
 Group Weather_Chart				(Weather)
 Group Humidity_Chart			(Weather)
-Number Weather_Temperature 		"Outside Temperature [%.1f °C]"	  <temperature>  (Weather_Chart) { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_temperature.xsl)]" }
-Number Weather_Humidity 		"Outside Humidity [%.1f %%]"	  <temperature>  (Humidity_Chart)       { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_humidity.xsl)]" }
-Number Weather_Pressure 		"Outside Air Pressure [%.1f]"  <temperature>     (Weather)       { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_pressure.xsl)]" }
-Number Weather_Humidex			"Humidex [SCALE(humidex.scale):%s]" 		     (Weather)
-Number Weather_Temp_Max 		"Todays Maximum [%.1f °C]"	      <temperature>  (Weather)
-Number Weather_Temp_Min 		"Todays Minimum [%.1f °C]"	      <temperature>  (Weather)
+Number Weather_Temperature 		"Outside Temperature [%.1f °C]"	  	<temperature>  		(Weather_Chart) { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_temperature.xsl)]" }
+Number Weather_Humidity 		"Outside Humidity [%.1f %%]"	  	<temperature>  		(Humidity_Chart)       { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_humidity.xsl)]" }
+Number Weather_Pressure 		"Outside Air Pressure [%.1f]"  		<temperature>     	(Weather)       { http="<[http://weather.yahooapis.com/forecastrss?w=39493&u=c:60000:XSLT(yahoo_weather_pressure.xsl)]" }
+Number Weather_Humidex			"Humidex [SCALE(humidex.scale):%s]" 		     		(Weather)
+Number Weather_Temp_Max 		"Todays Maximum [%.1f °C]"	      	<temperature>  		(Weather)
+Number Weather_Temp_Min 		"Todays Minimum [%.1f °C]"	      	<temperature>  		(Weather)
 Number Weather_Chart_Period		"Chart Period"
 Number Humidity_Chart_Period	"Humidity Chart Period"
-DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tR]"	<clock>
+DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tR]"			<clock>
 
-Group Sensor_Chart				(Weather)
-String Sensor "Sensor" (Control)  { serial="/dev/ttyAMA0" }
-Number Sensor_AA "Bedroom Temperature [%.1f °C]" 		<temperature> (Sensor_Chart)
-Number Sensor_AB "Living Room Temperature [%.1f °C]" 	<temperature> (Sensor_Chart)
-Number Sensor_AC "Guest room Temperature [%.1f °C]" 	<temperature> (Sensor_Chart)
-Number Sensor_AD "Outside Temperature [%.1f °C]" 		<temperature> (Sensor_Chart)
+/* Temperature sensors */
+Group Sensor_Chart										
+String Sensor 					"Sensor" 												(Control)  { serial="/dev/ttyAMA0" }
+Number Sensor_AA 				"Bedroom Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
+Number Sensor_AB 				"Living Room Temperature [%.1f °C]" 	<temperature> 	(Sensor_Chart)
+Number Sensor_AC 				"Guest room Temperature [%.1f °C]"	 	<temperature> 	(Sensor_Chart)
+Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
 Number Sensor_Chart_Period		"Sensor Chart Period"
-DateTime Sensor_LastUpdate		"Last Update [%1$ta %1$tR]"	<clock>
+DateTime Sensor_LastUpdate		"Last Update [%1$ta %1$tR]"				<clock>
 
-Number Energy_Yesterday		"Energy usage yesterday [%.1f W]"   (Energy) 				{ lightwaverf="serial=9470FE,type=ENERGY_YESTERDAY_USAGE" }
+/* Energy measurements */
 Group Energy_Today_Group
-Number Energy_Today			"Energy usage today [%.1f W]"       (Energy_Today_Group) 	{ lightwaverf="serial=9470FE,type=ENERGY_TODAY_USAGE" }
-Number Energy_Max			"Energy max usage [%.1f W]"      	(Energy) 				{ lightwaverf="serial=9470FE,type=ENERGY_MAX_USAGE" }
 Group Energy_Current_Group
-Number Energy_Current				"Energy usage current [%.1f W]"     (Energy_Current_Group) 	{ lightwaverf="serial=9470FE,type=ENERGY_CURRENT_USAGE" }
-Number Energy_Current_Period		"Chart Period"
-Number Energy_Cum_Period    		"Chart Period"
+Number Energy_Yesterday			"Energy usage yesterday [%.1f W]"   (Energy) 				{ lightwaverf="serial=9470FE,type=ENERGY_YESTERDAY_USAGE" }
+Number Energy_Today				"Energy usage today [%.1f W]"       (Energy_Today_Group) 	{ lightwaverf="serial=9470FE,type=ENERGY_TODAY_USAGE" }
+Number Energy_Max				"Energy max usage [%.1f W]"      	(Energy) 				{ lightwaverf="serial=9470FE,type=ENERGY_MAX_USAGE" }
+Number Energy_Current			"Energy usage current [%.1f W]"     (Energy_Current_Group) 	{ lightwaverf="serial=9470FE,type=ENERGY_CURRENT_USAGE" }
+Number Energy_Current_Period	"Chart Period"
+Number Energy_Cum_Period    	"Chart Period"
