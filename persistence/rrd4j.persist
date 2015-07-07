@@ -10,5 +10,5 @@ Items {
 	// let's only store temperature values in rrd
 	Temperature*,Weather_Chart*,Humidity_Chart*,Weather_Pressure : strategy = everyChange, restoreOnStartup
 	Energy_Today, Energy_Current : strategy = everyChange, restoreOnStartup
-	Sensor* : strategy = everyChange, restoreOnStartup
+	Sensor*, Sensor_AB, Sensor_AC : strategy = everyChange, restoreOnStartup
 }
