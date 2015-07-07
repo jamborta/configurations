@@ -35,10 +35,10 @@ sitemap demo label="Elizabeth House"
 				Text item=Sensor_AB valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Sensor_AC valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Sensor_AD valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
-				Text item=Sensor_LastUpdate_AA visibility=[Sensor_LastUpdate>1400] valuecolor=[Sensor_LastUpdate>1700="orange", Sensor_LastUpdate>2000="red"]
-				Text item=Sensor_LastUpdate_AB visibility=[Sensor_LastUpdate>1400] valuecolor=[Sensor_LastUpdate>1700="orange", Sensor_LastUpdate>2000="red"]
-				Text item=Sensor_LastUpdate_AC visibility=[Sensor_LastUpdate>1400] valuecolor=[Sensor_LastUpdate>1700="orange", Sensor_LastUpdate>2000="red"]
-				Text item=Sensor_LastUpdate_AD visibility=[Sensor_LastUpdate>1400] valuecolor=[Sensor_LastUpdate>1700="orange", Sensor_LastUpdate>2000="red"]				
+				Text item=Sensor_LastUpdate_AA visibility=[Sensor_LastUpdate_AA>1400] valuecolor=[Sensor_LastUpdate_AA>1700="orange", Sensor_LastUpdate_AA>2000="red"]
+				Text item=Sensor_LastUpdate_AB visibility=[Sensor_LastUpdate_AB>1400] valuecolor=[Sensor_LastUpdate_AB>1700="orange", Sensor_LastUpdate_AB>2000="red"]
+				Text item=Sensor_LastUpdate_AC visibility=[Sensor_LastUpdate_AC>1400] valuecolor=[Sensor_LastUpdate_AC>1700="orange", Sensor_LastUpdate_AC>2000="red"]
+				Text item=Sensor_LastUpdate_AD visibility=[Sensor_LastUpdate_AD>1400] valuecolor=[Sensor_LastUpdate_AD>1700="orange", Sensor_LastUpdate_AD>2000="red"]				
 			}
 			Frame {
 				Switch item=Sensor_Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
