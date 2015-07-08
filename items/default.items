@@ -1,8 +1,9 @@
 Group All
-Group Living_Room (All)
-Group Bedroom (All)
-Group Weather 	(All)
-Group Energy    (All)
+Group Living_Room 	(All)
+Group Bedroom 		(All)
+Group Weather 		(All)
+Group Energy    	(All)
+Group Sensors		(All)
 
 Group Ligths_Control 			"Lights Control" 	<video> 	(Living_Room)
 Group Ligths_Control_Bedroom 	"Lights Control" 	<video> 	(Bedroom)
@@ -54,7 +55,7 @@ Number Humidity_Chart_Period	"Humidity Chart Period"
 DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tR]"			<clock>
 
 /* Temperature sensors */
-Group Sensor_Chart										
+Group Sensor_Chart				(Sensors)										
 String Sensor 					"Sensor" 												(Control)  { serial="/dev/ttyAMA0" }
 Number Sensor_AA 				"Bedroom Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
 Number Sensor_AB 				"Living Room Temperature [%.1f °C]" 	<temperature> 	(Sensor_Chart)
