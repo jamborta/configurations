@@ -179,12 +179,42 @@ when
 	Item Bedroom_Moods received command
 	then
 		switch(receivedCommand) {
-			case 0 : {	sendCommand(Light_LR_Bulb5_BR, "20");
-					 	sendCommand(Light_LR_Bulb6_BR, "20");
-					 	sendCommand(Light_LR_Bulb5_CT, "0.47058827,100.0,100.0");
-					 	sendCommand(Light_LR_Bulb6_CT, "0.47058827,100.0,100.0")}
+			case 0 : {	sendCommand(Light_LR_Bulb1_BR, "8");
+					 	sendCommand(Light_LR_Bulb6_BR, "8");
+					 	sendCommand(Light_LR_Bulb5_CT, "0,100.0,100.0");
+					 	sendCommand(Light_LR_Bulb6_CT, "0,100.0,100.0")}
 			case 1 : playStream("http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u")
 			case 2 : playStream("http://mp3-live.swr3.de/swr3_m.m3u")
+		}
+end
+
+rule "Set mood"
+when  
+	Item Livingroom_Moods received command
+	then
+		switch(receivedCommand) {
+			case 0 : {	sendCommand(Light_LR_Bulb1, "OFF");
+					 	sendCommand(Light_LR_Bulb2, "OFF");
+					 	sendCommand(Light_LR_Bulb3_BR, "10");
+					 	sendCommand(Light_LR_Bulb4_BR, "10");
+					 	sendCommand(Light_LR_Bulb3_CT, "34,77,100");
+					 	sendCommand(Light_LR_Bulb4_CT, "34,77,100")
+					 	}
+		    case 1 : {	sendCommand(Light_LR_Bulb1, "OFF");
+					 	sendCommand(Light_LR_Bulb2, "OFF");
+					 	sendCommand(Light_LR_Bulb3_BR, "15");
+					 	sendCommand(Light_LR_Bulb4_BR, "15");
+					 	sendCommand(Light_LR_Bulb3_CT, "132,75,40");
+					 	sendCommand(Light_LR_Bulb4_CT, "132,75,40")
+					 	}
+		   case 2 : {
+		   				sendCommand(Light_LR_Bulb1_BR, "8");
+					 	sendCommand(Light_LR_Bulb2_BR, "8");
+					 	sendCommand(Light_LR_Bulb3_W, "ON");
+					 	sendCommand(Light_LR_Bulb4_W, "ON");
+					 	sendCommand(Light_LR_Bulb3_BR, "15");
+					 	sendCommand(Light_LR_Bulb4_BR, "15")
+		   }
 		}
 end
 

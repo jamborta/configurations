@@ -1,7 +1,10 @@
 sitemap demo label="Elizabeth House"
 {
 	Frame {
-		Group item=Living_Room label="Living Room" icon="groundfloor"
+		Group item=Living_Room label="Living Room" icon="groundfloor" {
+			Group item=Ligths_Control
+			Switch item=Livingroom_Moods label="Moods" mappings=[0="Warm", 1="Green", 2="White"]
+		}
 		Group item=Bedroom label="Bedroom" icon="bedroom" {
 			Group item=Ligths_Control_Bedroom
 			Switch item=Bedroom_Moods label="Moods" mappings=[0="Mood1", 1="Mood2", 2="Mood3"]
