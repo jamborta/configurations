@@ -179,8 +179,8 @@ when
 	Item Bedroom_Moods received command
 	then
 		switch(receivedCommand) {
-			case 0 : {	sendCommand(Light_LR_Bulb1_BR, "8");
-					 	sendCommand(Light_LR_Bulb6_BR, "8");
+			case 0 : {	sendCommand(Light_LR_Bulb1_BR, "5");
+					 	sendCommand(Light_LR_Bulb6_BR, "5");
 					 	sendCommand(Light_LR_Bulb5_CT, "0,100.0,100.0");
 					 	sendCommand(Light_LR_Bulb6_CT, "0,100.0,100.0")}
 			case 1 : playStream("http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u")
