@@ -2,9 +2,12 @@ sitemap demo label="Elizabeth House"
 {
 	Frame {
 		Group item=Living_Room label="Living Room" icon="groundfloor"
-		Group item=Bedroom label="Bedroom" icon="bedroom"
+		Group item=Bedroom label="Bedroom" icon="bedroom" {
+			Group item=Ligths_Control_Bedroom
+			Switch item=Bedroom_Moods label="Moods" mappings=[0="Mood1", 1="Mood2", 2="Mood3"]
+		}
 		Switch item=Lights_LR mappings=[OFF="All Off", ON="All On"]		
-		Switch item=Lights_BR mappings=[OFF="All Off", ON="All On"]		
+		Switch item=Lights_BR mappings=[OFF="All Off", ON="All On"]
 	}
 	
 	Frame label="Energy" {
@@ -47,6 +50,8 @@ sitemap demo label="Elizabeth House"
 				Chart item=Sensor_Chart period=W refresh=30000 visibility=[Sensor_Chart_Period==2]
 			}
 		}
+		
+		
 		
 		Text item=Weather_Temperature valuecolor=[Weather_LastUpdate=="Uninitialized"="lightgray",Weather_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
 			Frame {

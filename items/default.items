@@ -7,6 +7,7 @@ Group Sensors		(All)
 
 Group Ligths_Control 			"Lights Control" 	<video> 	(Living_Room)
 Group Ligths_Control_Bedroom 	"Lights Control" 	<video> 	(Bedroom)
+Group Lights_Moods				"Lights Moods"		<video>		(Bedroom)
 
 
 /* active groups */
@@ -40,6 +41,9 @@ Switch Light_LR_Bulb6       "Jju's Light"           	(Ligths_Control_Bedroom, Li
 Dimmer Light_LR_Bulb6_BR    "Jju's Light Brightness" 	(Ligths_Control_Bedroom)      	    {milight="bridge1;10;brightness"}
 Color  Light_LR_Bulb6_CT    "Jju's Light Color"      	(Ligths_Control_Bedroom)         	{milight="bridge1;10;rgb"}           
 Switch Light_LR_Bulb6_W     "Jju's Light White"      	(Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;10;whiteMode"}        
+
+/*Bedroom moods */
+Number Bedroom_Moods	"Moods"
 
 /* Yahoo temperature measurements */
 Group Weather_Chart				(Weather)
