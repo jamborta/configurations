@@ -16,12 +16,10 @@ Strategies {
 Items {
 	// persist all items once a day and on every change and restore them from the db at startup
 	// careful, this might result in huge databases - that's why it is in comment here ;-)
-	* : strategy = everyChange, everyDay, restoreOnStartup
+	//* : strategy = everyChange, everyDay, restoreOnStartup
 	
 	// persist all temperature and weather values at every change and every hour
-//	Temperature*, Weather* : strategy = everyChange, restoreOnStartup
-//	DemoSwitch,NoOfLights,Window_GF_Toilet,Heating* : strategy = everyChange, restoreOnStartup
-	
-//	Energy_Today, Energy_Current : strategy = everyChange, restoreOnStartup
-//	Sensor_Chart* : strategy = everyChange, restoreOnStartup
+	Weather_Temperature, Weather_Humidity, Weather_Pressure, Weather_Humidex : strategy = everyChange, restoreOnStartup	
+	Energy_Today, Energy_Current, Energy_Max : strategy = everyChange, restoreOnStartup
+	Sensor_Chart* : strategy = everyChange, restoreOnStartup
 }
