@@ -1,6 +1,7 @@
 import org.openhab.core.library.types.*
 import org.openhab.core.persistence.*
 import org.openhab.model.script.actions.*
+import java.lang.Double
 
 var Number counter = 1
 var Timer timer = null
@@ -131,21 +132,23 @@ then
 			var temperatureCommand = "a" + id + "TEMP-----"
 			Sensor.sendCommand(temperatureCommand)
 		} else if (message.contains("TEMP") && !message.contains('-')){
-			var temp = message.substring(6)
+			var temp = new Double(message.substring(6))
 			logInfo("Sensor", "Temperature measurement " + temp)
 			var id = message.substring(0, 2)
-			if (id.equals("AA")){
-				Sensor_AA.postUpdate(temp)
-				postUpdate(Sensor_LastUpdate_AA, new DateTimeType())
-			} else if (id.equals("AB")){
-				Sensor_AB.postUpdate(temp)
-				postUpdate(Sensor_LastUpdate_AB, new DateTimeType())
-			} else if (id.equals("AC")){
-				Sensor_AC.postUpdate(temp)				
-				postUpdate(Sensor_LastUpdate_AC, new DateTimeType())	
-			} else if (id.equals("AD")){
-				Sensor_AD.postUpdate(temp)				
-				postUpdate(Sensor_LastUpdate_AD, new DateTimeType())
+			if (temp < 100) {			
+				if (id.equals("AA")){
+					Sensor_AA.postUpdate(temp)
+					postUpdate(Sensor_LastUpdate_AA, new DateTimeType())
+				} else if (id.equals("AB")){
+					Sensor_AB.postUpdate(temp)
+					postUpdate(Sensor_LastUpdate_AB, new DateTimeType())
+				} else if (id.equals("AC")){
+					Sensor_AC.postUpdate(temp)				
+					postUpdate(Sensor_LastUpdate_AC, new DateTimeType())	
+				} else if (id.equals("AD")){
+					Sensor_AD.postUpdate(temp)				
+					postUpdate(Sensor_LastUpdate_AD, new DateTimeType())
+				}
 			}			
 			var sleepCommand = "a" + id + "SLEEP" + "015M"
 			Sensor.sendCommand(sleepCommand)					
