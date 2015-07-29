@@ -66,7 +66,11 @@ Number Sensor_AA 				"Bedroom Temperature [%.1f °C]" 		<temperature> 	(Sensor_C
 Number Sensor_AB 				"Living Room Temperature [%.1f °C]" 	<temperature> 	(Sensor_Chart)
 Number Sensor_AC 				"Guest room Temperature [%.1f °C]"	 	<temperature> 	(Sensor_Chart)
 Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
-Number  Sensor_Driveway_Temperature     "Driveway Temp [%.1f C]"        <temperature>   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
+Number  Sensor_1_Temp     "Sensor1 Temp [%.1f C]"        <temperature>   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
+Number  Sensor_1_Hum     "Sensor1 Hum [%.1f C]"          <temperature>   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=5" }
+Number  Sensor_1_UV     "Sensor1 UV [%.1f C]"        <temperature>   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=27" }
+Number  Sensor_1_Lum     "Sensor1 Lum [%.1f C]"        <temperature>   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
+Number  Sensor_1_Pow     "Sensor1 Lum [%.1f C]"        <temperature>   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=4" }
 
 Number Sensor_Chart_Period		"Sensor Chart Period"
 DateTime Sensor_LastUpdate_AA		"Last Update (Bedroom) [%1$ta %1$tR]"				<clock>
