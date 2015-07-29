@@ -108,7 +108,7 @@ end
 
 rule "Temp trigger"
 when
-	Time cron "0 */15 * * * ?" or
+	Time cron "0 */5 * * * ?" or
 	System started
 then
 	Sensor.sendCommand("aAATEMP-----")
