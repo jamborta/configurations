@@ -108,7 +108,7 @@ end
 
 rule "Temp trigger"
 when
-	Time cron "0 */1 * * * ?" or
+	Time cron "0 */15 * * * ?" or
 	System started
 then
 	Sensor.sendCommand("aAATEMP-----")
@@ -150,7 +150,7 @@ then
 					postUpdate(Sensor_LastUpdate_AD, new DateTimeType())
 				}
 			}			
-			var sleepCommand = "a" + id + "SLEEP" + "002M"
+			var sleepCommand = "a" + id + "SLEEP" + "015M"
 			Sensor.sendCommand(sleepCommand)					
 		}
 	]
