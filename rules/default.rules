@@ -156,9 +156,17 @@ then
 	]
 end
 
-rule "Motion in driveway detected"
+rule "Motion with Sensor_1 detected"
 when
 	Item Sensor_Driveway_PIR changed from CLOSED to OPEN
+then
+	logInfo("Sensor", "Motion detected")
+	sendCommand(Light_LR_Bulb4, ON)
+end
+
+rule "Motion with Sensor_1 detected"
+when
+	Item Sensor_Driveway_PIR changed from OPEN to CLOSED
 then
 	logInfo("Sensor", "Motion detected")
 	sendCommand(Light_LR_Bulb4, OFF)
