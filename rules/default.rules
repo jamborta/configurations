@@ -156,6 +156,13 @@ then
 	]
 end
 
+rule "Motion in driveway detected"
+when
+	Item Sensor_Driveway_PIR changed from CLOSED to OPEN
+then
+	sendCommand(Light_LR_Bulb4, OFF)
+end
+
 rule "Update max and min temperatures"
 when
 	Item Weather_Temperature changed or
