@@ -150,7 +150,7 @@ then
 					postUpdate(Sensor_LastUpdate_AD, new DateTimeType())
 				}
 			}			
-			var sleepCommand = "a" + id + "SLEEP" + "001M"
+			var sleepCommand = "a" + id + "SLEEP" + "002M"
 			Sensor.sendCommand(sleepCommand)					
 		}
 	]
