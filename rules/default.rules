@@ -161,7 +161,7 @@ when
 	Item Sensor_Driveway_PIR changed from CLOSED to OPEN
 then
 	logInfo("Sensor", "Motion detected")
-	sendCommand(Light_LR_Bulb4, ON)
+	sendCommand(Light_LR_Bulb6, OFF)
 end
 
 rule "Motion with Sensor_1 detected"
@@ -169,7 +169,7 @@ when
 	Item Sensor_Driveway_PIR changed from OPEN to CLOSED
 then
 	logInfo("Sensor", "Motion detected")
-	sendCommand(Light_LR_Bulb4, OFF)
+	sendCommand(Light_LR_Bulb6, ON)
 end
 
 rule "Update max and min temperatures"
