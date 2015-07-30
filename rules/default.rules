@@ -29,17 +29,17 @@ var Timer timer = null
  * This rule demonstrates how a NumberItem can be used to easily control the local sound system.
  * A selection widget in the UI provides easy access for this
  */
-rule "Select Radio Station"
-	when
-		Item Radio_Station received command
-	then
-		switch(receivedCommand) {
-			case 0 : playStream(null)
-			case 1 : playStream("http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u")
-			case 2 : playStream("http://mp3-live.swr3.de/swr3_m.m3u")
-			case 3 : playStream("http://edge.live.mp3.mdn.newmedia.nacamar.net/radioffh/livestream.mp3.m3u")
-		}
-end
+//rule "Select Radio Station"
+//	when
+//		Item Radio_Station received command
+//	then
+//		switch(receivedCommand) {
+//			case 0 : playStream(null)
+//			case 1 : playStream("http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u")
+//			case 2 : playStream("http://mp3-live.swr3.de/swr3_m.m3u")
+//			case 3 : playStream("http://edge.live.mp3.mdn.newmedia.nacamar.net/radioffh/livestream.mp3.m3u")
+//		}
+//end
 
 /**
  * This rules controls the volume on the local host
@@ -160,16 +160,14 @@ rule "Motion with Sensor_1 detected"
 when
 	Item Sensor_Driveway_PIR changed from CLOSED to OPEN
 then
-	logInfo("Sensor", "Motion detected")
-	sendCommand(Light_LR_Bulb6, OFF)
+	sendCommand(Light_LR_Bulb1, OFF)
 end
 
 rule "Motion with Sensor_1 detected"
 when
 	Item Sensor_Driveway_PIR changed from OPEN to CLOSED
 then
-	logInfo("Sensor", "Motion detected")
-	sendCommand(Light_LR_Bulb6, ON)
+	sendCommand(Light_LR_Bulb1, ON)
 end
 
 rule "Update max and min temperatures"

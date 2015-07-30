@@ -36,7 +36,7 @@ Switch Light_LR_Bulb4_W     "Bulb 4 White"      (Ligths_Control)         	{autou
 Switch Light_LR_Bulb5       "Tamas' Light 1"            (Ligths_Control_Bedroom, Lights_BR)	{milight="bridge1;9"}  
 Dimmer Light_LR_Bulb5_BR    "Tamas' Light Brightness" 	(Ligths_Control_Bedroom)         	{milight="bridge1;9;brightness"}
 Color  Light_LR_Bulb5_CT    "Tamas' Light Color"      	(Ligths_Control_Bedroom)         	{milight="bridge1;9;rgb"}           
-Switch  Light_LR_Bulb5_W    "Tamas' Light White"      	(Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;9;whiteMode"}           
+Switch Light_LR_Bulb5_W     "Tamas' Light White"      	(Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;9;whiteMode"}           
 Switch Light_LR_Bulb6       "Jju's Light"           	(Ligths_Control_Bedroom, Lights_BR) {milight="bridge1;10"}  
 Dimmer Light_LR_Bulb6_BR    "Jju's Light Brightness" 	(Ligths_Control_Bedroom)      	    {milight="bridge1;10;brightness"}
 Color  Light_LR_Bulb6_CT    "Jju's Light Color"      	(Ligths_Control_Bedroom)         	{milight="bridge1;10;rgb"}           
@@ -66,11 +66,20 @@ Number Sensor_AA 				"Bedroom Temperature [%.1f °C]" 		<temperature> 	(Sensor_C
 Number Sensor_AB 				"Living Room Temperature [%.1f °C]" 	<temperature> 	(Sensor_Chart)
 Number Sensor_AC 				"Guest room Temperature [%.1f °C]"	 	<temperature> 	(Sensor_Chart)
 Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
-Number  Sensor_1_Temp     "Sensor1 Temp [%.1f C]"        <temperature>   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
-Number  Sensor_1_Hum     "Sensor1 Hum [%.1f C]"          <temperature>   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=5" }
-Number  Sensor_1_UV     "Sensor1 UV [%.1f C]"        <temperature>   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=27" }
-Number  Sensor_1_Lum     "Sensor1 Lum [%.1f C]"        <temperature>   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
-Contact Sensor_Driveway_PIR     "Driveway PIR"  <temperature>   { zwave="3:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
+
+/* Sensors */
+Group Zwave_Sensors				(Sensors)
+Number  Node_2_Temp     		"Living Room Temperature [%.1f C]"       <temperature>	(Zwave_Sensors)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
+Number  Node_2_Hum     			"Living Room Humidity [%.1f]"          	 <temperature>  (Zwave_Sensors)	  { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=5" }
+Number  Node_2_UV     			"Living Room UV [%.1f]"        			 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=27" }
+Number  Node_2_Lum     			"Sensor1 Luminance [%.1f]"        		 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
+Contact Node_2_Motion     		"Living Room Motion"  					 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
+
+Number  Node_3_Temp     		"Living Room Temperature [%.1f C]"       <temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
+Number  Node_3_Hum     			"Living Room Humidity [%.1f]"          	 <temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=5" }
+Number  Node_3_UV     			"Living Room UV [%.1f]"        			 <temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=27" }
+Number  Node_3_Lum     			"Sensor1 Luminance [%.1f]"        		 <temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
+Contact Node_3_Motion     		"Living Room Motion"  					 <temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
 
 Number Sensor_Chart_Period		"Sensor Chart Period"
 DateTime Sensor_LastUpdate_AA		"Last Update (Bedroom) [%1$ta %1$tR]"				<clock>
