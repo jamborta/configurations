@@ -72,14 +72,14 @@ Group Zwave_Sensors				(Sensors)
 Number  Node_2_Temp     		"Living Room Temperature [%.1f C]"       <temperature>	(Zwave_Sensors)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
 Number  Node_2_Hum     			"Living Room Humidity [%.1f]"          	 <temperature>  (Zwave_Sensors)	  { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=5" }
 Number  Node_2_UV     			"Living Room UV [%.1f]"        			 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=27" }
-Number  Node_2_Lum     			"Sensor1 Luminance [%.1f]"        		 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
+Number  Node_2_Lum     			"Living Room Luminance [%.1f]"        	 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
 Contact Node_2_Motion     		"Living Room Motion"  					 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
 
-Number  Node_3_Temp     		"Living Room Temperature [%.1f C]"       <temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
-Number  Node_3_Hum     			"Living Room Humidity [%.1f]"          	 <temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=5" }
-Number  Node_3_UV     			"Living Room UV [%.1f]"        			 <temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=27" }
-Number  Node_3_Lum     			"Sensor1 Luminance [%.1f]"        		 <temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
-Contact Node_3_Motion     		"Living Room Motion"  					 <temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
+Number  Node_3_Temp     		"Bedroom Temperature [%.1f C]"       	<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
+Number  Node_3_Hum     			"Bedroom Humidity [%.1f]"          	 	<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=5" }
+Number  Node_3_UV     			"Bedroom UV [%.1f]"        			 	<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=27" }
+Number  Node_3_Lum     			"Bedroom Luminance [%.1f]"        		<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
+Contact Node_3_Motion     		"Bedroom Motion"  					 	<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
 
 Number Sensor_Chart_Period		"Sensor Chart Period"
 DateTime Sensor_LastUpdate_AA		"Last Update (Bedroom) [%1$ta %1$tR]"				<clock>
