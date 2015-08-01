@@ -70,7 +70,7 @@ Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_C
 
 /* Switches */
 Group Zwave_Switches			(Switches)
-Switch Bathroom_Vent            "Bathroom Ventilation"                  <light>         (Zwave_Switches)  {zwave="4:0:command=binary_switch"}
+Switch Bathroom_Vent            "Bathroom Ventilation"                  <light>         (Zwave_Switches)  {zwave="4:0:command=SWITCH_BINARY"}
 
 /* Sensors */
 Group Zwave_Sensors				(Sensors)
