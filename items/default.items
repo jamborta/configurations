@@ -69,8 +69,8 @@ Number Sensor_AC 				"Guest room Temperature [%.1f °C]"	 	<temperature> 	(Senso
 Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
 
 /* Switches */
-Group Zwave_Switches			(Switches)
-Switch Bathroom_Vent            "Bathroom Ventilation"                  <light>         (Zwave_Switches)  {zwave="4:0:command=SWITCH_BINARY"}
+Group Lightwave_Switches			(Switches)
+Switch Bathroom_Vent            "Bathroom Ventilation"                  <light>         (Lightwave_Switches)  { lightwaverf="room=1,device=4,type=SWITCH" }
 
 /* Sensors */
 Group Zwave_Sensors				(Sensors)
