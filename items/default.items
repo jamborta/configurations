@@ -32,8 +32,8 @@ Switch Light_LR_Bulb4       "Bulb 4"            (Ligths_Control, Lights_LR) {mil
 Dimmer Light_LR_Bulb4_BR    "Bulb 4 Brightness" (Ligths_Control)         	{milight="bridge1;8;brightness"}
 Color  Light_LR_Bulb4_CT    "Bulb 4 Color"      (Ligths_Control)         	{milight="bridge1;8;rgb"}           
 Switch Light_LR_Bulb4_W     "Bulb 4 White"      (Ligths_Control)         	{autoupdate="false", milight="bridge1;8;whiteMode"}           
-Dimmer  Dimmer1 			"Dimmer1 [%d %%]" 	(Ligths_Control) 			{ lightwaverf="room=1,device=6,type=DIMMER" }
-Dimmer  DimmerSwitch		"Dimmer1" 			(Ligths_Control) 			{ lightwaverf="room=1,device=6,type=SWITCH" }
+Dimmer  Dimmer1 			"Kitchen Dimmer1 [%d %%]" 	(Ligths_Control) 	{ lightwaverf="room=1,device=3,type=DIMMER" }
+Dimmer  DimmerSwitch		"Kitchen Switch" 			(Ligths_Control) 	{ lightwaverf="room=1,device=3,type=SWITCH" }
 
 
 /* Bedroom lights */
