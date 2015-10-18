@@ -232,7 +232,9 @@ when
 					 	sendCommand(Light_LR_Bulb3_W, "ON");
 					 	sendCommand(Light_LR_Bulb4_W, "ON");
 					 	sendCommand(Light_LR_Bulb3_BR, "15");
-					 	sendCommand(Light_LR_Bulb4_BR, "15")
+					 	sendCommand(Light_LR_Bulb4_BR, "15");
+					 	sendCommand(Light_LR_Kitchen, "OFF");
+					 	sendCommand(Light_LR_Bar, "OFF");
 		   }
 		}
 end
