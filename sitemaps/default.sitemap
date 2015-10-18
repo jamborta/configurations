@@ -3,7 +3,7 @@ sitemap demo label="Elizabeth House"
 	Frame {
 		Group item=Living_Room label="Living Room" icon="groundfloor" {
 			Group item=Ligths_Control
-			Switch item=Livingroom_Moods label="Moods" mappings=[0="Bright", 1="Green", 2="White"]
+			Switch item=Livingroom_Moods label="Moods" mappings=[0="Bright", 1="Green", 2="Relax"]
 		}
 		Group item=Bedroom label="Bedroom" icon="bedroom" {
 			Group item=Ligths_Control_Bedroom
