@@ -209,12 +209,15 @@ when
 	Item Livingroom_Moods received command
 	then
 		switch(receivedCommand) {
-			case 0 : {	sendCommand(Light_LR_Bulb1, "OFF");
-					 	sendCommand(Light_LR_Bulb2, "OFF");
-					 	sendCommand(Light_LR_Bulb3_BR, "10");
-					 	sendCommand(Light_LR_Bulb4_BR, "10");
-					 	sendCommand(Light_LR_Bulb3_CT, "34,77,100");
-					 	sendCommand(Light_LR_Bulb4_CT, "34,77,100")
+			case 0 : {	sendCommand(Light_LR_Bulb1, "ON");
+					 	sendCommand(Light_LR_Bulb2, "ON");
+					 	sendCommand(Light_LR_Bulb3, "ON");
+					 	sendCommand(Light_LR_Bulb3, "ON");	
+					 	sendCommand(Light_LR_Kitchen, "ON");
+					 	sendCommand(Light_LR_Bulb1_BR, "100");
+					 	sendCommand(Light_LR_Bulb2_BR, "100");
+					 	sendCommand(Light_LR_Bulb3_BR, "100");
+					 	sendCommand(Light_LR_Bulb4_BR, "100");
 					 	}
 		    case 1 : {	sendCommand(Light_LR_Bulb1, "OFF");
 					 	sendCommand(Light_LR_Bulb2, "OFF");
