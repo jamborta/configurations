@@ -96,7 +96,7 @@ DateTime Sensor_LastUpdate_AA		"Last Update (Bedroom) [%1$ta %1$tR]"				<clock>
 DateTime Sensor_LastUpdate_AB		"Last Update (Living Room) [%1$ta %1$tR]"			<clock>
 DateTime Sensor_LastUpdate_AC		"Last Update (Guest room) [%1$ta %1$tR]"			<clock>
 DateTime Sensor_LastUpdate_AD		"Last Update (Outside) [%1$ta %1$tR]"				<clock>
-
+DateTime LR_Motion_On_LastUpdate 		"Last Update (Living Room Motion) [%1$ta %1$tR]"	<clock>
 
 /* Energy measurements */
 Group Energy_Today_Group

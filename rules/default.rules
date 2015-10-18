@@ -239,6 +239,17 @@ when
 		}
 end
 
+rule "Living Room Motion Last On"
+when
+	Item Node_2_Motion received update OPEN
+	then
+		postUpdate(LR_Motion_On_LastUpdate, new DateTimeType())
+end
+
+
+	
+
+
 /** 
  * shows how to check recent switch states - very helpful to avoid executing something too often, just
  * because somebody presses a button too often (e.g. sending a notification, if the doorbell button is pressed)

@@ -35,7 +35,7 @@ sitemap demo label="Elizabeth House"
 		}
 	
 		
-		Text item=Sensor_AA valuecolor=[Sensor_AA=="Uninitialized"="lightgray",Sensor_LastUpdate_AA>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
+		Text item=Sensor_AA valuecolor=[Sensor_AA=="Uninitialised"="lightgray",Sensor_LastUpdate_AA>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
 			Frame {
 				Text item=Sensor_AA valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Sensor_AB valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
@@ -67,7 +67,7 @@ sitemap demo label="Elizabeth House"
 		
 		
 		
-		Text item=Weather_Temperature valuecolor=[Weather_LastUpdate=="Uninitialized"="lightgray",Weather_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
+		Text item=Weather_Temperature valuecolor=[Weather_LastUpdate=="Uninitialised"="lightgray",Weather_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
 			Frame {
 				Text item=Weather_Temperature valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Weather_Temp_Max valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
