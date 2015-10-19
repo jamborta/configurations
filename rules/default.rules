@@ -249,6 +249,7 @@ when
 		postUpdate(LR_Motion_On_LastUpdate, new DateTimeType())
 end
 
+
 rule "Lights On At Sunset"
 when
     Time cron "0 0 16 * * ?"   // Every day 16:00 hours, start timer
