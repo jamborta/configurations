@@ -2,9 +2,11 @@ import org.openhab.core.library.types.*
 import org.openhab.core.persistence.*
 import org.openhab.model.script.actions.*
 import java.lang.Double
+import org.joda.time.*
+import org.openhab.model.script.actions.Timer
 
 var Number counter = 1
-var Timer timer = null
+var Timer tIndoorLights
 
 /**
  * This is a demo rule which simulates a real dimmer by reacting to increase/decrease commands 
@@ -132,7 +134,8 @@ then
 			var temperatureCommand = "a" + id + "TEMP-----"
 			Sensor.sendCommand(temperatureCommand)
 		} else if (message.contains("TEMP") && !message.contains('-')){
-			var temp = new Double(message.substring(6))
+			var String tempStr = message.substring(6)
+			var temp = new Double(tempStr)
 			logInfo("Sensor", "Temperature measurement " + temp)
 			var id = message.substring(0, 2)
 			if (temp < 100) {			
@@ -246,8 +249,32 @@ when
 		postUpdate(LR_Motion_On_LastUpdate, new DateTimeType())
 end
 
+rule "Lights On At Sunset"
+when
+    Time cron "0 0 16 * * ?"   // Every day 16:00 hours, start timer
+	then 
+        var year   = now.getYear
+        var month  = now.getMonthOfYear
+        var day    = now.getDayOfMonth
+        var datum  = year+"-"+month+"-"+day+" "+strSunset.state
+        logInfo("Sunset","datum = " + datum)
+        var DateTime sunset = parse(year+"-"+month+"-"+day+"T"+strSunset.state)
 
-	
+        /*
+         * Indoor Lights
+         */
+         // Cancel timer to avoid reschedule
+        if(tIndoorLights!=null) {
+        logInfo("Sunset","Timer tIndoorLights cancelled") 
+        tIndoorLights.cancel()
+        }
+        logInfo("Sunset","Timer tIndoorLights created") 
+        tIndoorLights = createTimer(sunset.minusMinutes(15)) [|
+        	logInfo("Sunset","Timer tIndoorLights executed") 
+			sendCommand(Light_LR_Kitchen, "ON")
+        ]
+end
+
 
 
 /** 
