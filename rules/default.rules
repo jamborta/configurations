@@ -265,8 +265,8 @@ when
          */
          // Cancel timer to avoid reschedule
         if(tIndoorLights!=null) {
-        logInfo("Sunset","Timer tIndoorLights cancelled") 
-        tIndoorLights.cancel()
+        	logInfo("Sunset","Timer tIndoorLights cancelled") 
+        	tIndoorLights.cancel()
         }
         logInfo("Sunset","Timer tIndoorLights created") 
         tIndoorLights = createTimer(sunset.minusMinutes(15)) [|
