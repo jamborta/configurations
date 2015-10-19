@@ -6,7 +6,8 @@ import org.joda.time.*
 import org.openhab.model.script.actions.Timer
 
 var Number counter = 1
-var Timer tIndoorLights
+var Timer tIndoorLightsFirst
+var Timer tIndoorLightsSecond
 
 /**
  * This is a demo rule which simulates a real dimmer by reacting to increase/decrease commands 
@@ -265,13 +266,20 @@ when
          * Indoor Lights
          */
          // Cancel timer to avoid reschedule
-        if(tIndoorLights!=null) {
+        if(tIndoorLightsFirst!=null) {
         	logInfo("Sunset","Timer tIndoorLights cancelled") 
-        	tIndoorLights.cancel()
+        	tIndoorLightsFirst.cancel()
+        	tIndoorLightsSecond.cancel()
         }
         logInfo("Sunset","Timer tIndoorLights created") 
-        tIndoorLights = createTimer(sunset.minusMinutes(15)) [|
+        tIndoorLightsFirst = createTimer(sunset.minusMinutes(15)) [|
+        	logInfo("Sunset","Timer tIndoorLights executed")
+        	sendCommand(Light_LR_Kitchen_D, "40") 
+			sendCommand(Light_LR_Kitchen, "ON")
+        ]
+        tIndoorLightsSecond = createTimer(sunset.plusHours(1)) [|
         	logInfo("Sunset","Timer tIndoorLights executed") 
+			sendCommand(Light_LR_Kitchen_D, "80") 
 			sendCommand(Light_LR_Kitchen, "ON")
         ]
 end
