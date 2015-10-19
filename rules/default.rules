@@ -274,7 +274,7 @@ when
         logInfo("Sunset","Timer tIndoorLights created") 
         tIndoorLightsFirst = createTimer(sunset.minusMinutes(15)) [|
         	logInfo("Sunset","Timer tIndoorLights executed")
-        	sendCommand(Light_LR_Kitchen_D, "40") 
+        	sendCommand(Light_LR_Kitchen_D, "20") 
 			sendCommand(Light_LR_Kitchen, "ON")
         ]
         tIndoorLightsSecond = createTimer(sunset.plusHours(1)) [|
