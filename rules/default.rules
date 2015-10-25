@@ -272,9 +272,9 @@ when
         	tIndoorLightsSecond.cancel()
         }
         logInfo("Sunset","Timer tIndoorLights created") 
-        tIndoorLightsFirst = createTimer(sunset.plusMinutes(15)) [|
+        tIndoorLightsFirst = createTimer(sunset.minusMinutes(15)) [|
         	logInfo("Sunset","Timer tIndoorLights executed")
-        	sendCommand(Light_LR_Kitchen_D, "20") 
+        	sendCommand(Light_LR_Kitchen_D, "30") 
 			sendCommand(Light_LR_Kitchen, "ON")
         ]
         tIndoorLightsSecond = createTimer(sunset.plusMinutes(80)) [|
