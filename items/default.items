@@ -75,7 +75,7 @@ Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_C
 
 /* Switches */
 Group Lightwave_Switches			(Switches)
-Switch Bathroom_Vent            "Bathroom Ventilation"                  <light>         (Lightwave_Switches)  { lightwaverf="room=1,device=4,type=SWITCH" }
+Switch Bathroom_Vent            "Bathroom Ventilation"                  <light>         (Lightwave_Switches)  { lightwaverf="room=1,device=5,type=SWITCH" }
 
 /* Sensors */
 Group Zwave_Sensors				(Sensors)
