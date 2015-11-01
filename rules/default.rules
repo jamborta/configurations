@@ -157,7 +157,7 @@ then
 					postUpdate(Sensor_LastUpdate_AD, new DateTimeType())
 				}
 			}			
-		} else if (message.contains("BATT") && !message.contains('-')){
+		} else if (message.contains("BATT") && message.contains('-')){
 			var String battStr = message.substring(6)
 			var batt = new Double(battStr)
 			logInfo("Sensor", "Battery status " + batt)

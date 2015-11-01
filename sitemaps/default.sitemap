@@ -37,11 +37,6 @@ sitemap demo label="Elizabeth House"
 	
 	Frame label="Temperature" {
 		
-		Text item=Sensor_AA_BT visibility=[Sensor_AA_BT<10.5]
-		Text item=Sensor_AA_BT visibility=[Sensor_AB_BT<10.5]
-		Text item=Sensor_AA_BT visibility=[Sensor_AC_BT<10.5]
-		Text item=Sensor_AA_BT visibility=[Sensor_AD_BT<10.5]
-		
 		Text item=Sensor_AA valuecolor=[Sensor_AA=="Uninitialised"="lightgray",Sensor_LastUpdate_AA>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
 			Frame {
 				Text item=Sensor_AA valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
@@ -105,12 +100,20 @@ sitemap demo label="Elizabeth House"
 		}
 	}
 	Frame label="Heating" {
-		Text item=BR_Radiator_BT visibility=[BR_Radiator_BT<10] valuecolor=[BR_Radiator_BT<10="orange", BR_Radiator_BT<5="red"]
-		Text item=LR_Radiator_Window_BT visibility=[LR_Radiator_Window_BT<10] valuecolor=[LR_Radiator_Window_BT<10="orange", LR_Radiator_Window_BT<5="red"]
-		Text item=LR_Radiator_Door_BT visibility=[LR_Radiator_Door_BT<10] valuecolor=[LR_Radiator_Door_BT<10="orange", LR_Radiator_Door_BT<5="red"]
 		Setpoint item=BR_Radiator_HS step=0.5 minValue=18 maxValue=30
 		Setpoint item=LR_Radiator_Window_HS step=0.5 minValue=18 maxValue=30
 		Setpoint item=LR_Radiator_Door_HS step=0.5 minValue=18 maxValue=30
 	}		
+	
+	Frame label="Battery Status" {
+		Text item=BR_Radiator_BT visibility=[BR_Radiator_BT<10] valuecolor=[BR_Radiator_BT<10="orange", BR_Radiator_BT<5="red"]
+		Text item=LR_Radiator_Window_BT visibility=[LR_Radiator_Window_BT<10] valuecolor=[LR_Radiator_Window_BT<10="orange", LR_Radiator_Window_BT<5="red"]
+		Text item=LR_Radiator_Door_BT visibility=[LR_Radiator_Door_BT<10] valuecolor=[LR_Radiator_Door_BT<10="orange", LR_Radiator_Door_BT<5="red"]
+		Text item=Sensor_AA_BT visibility=[Sensor_AA_BT<10.5]
+		Text item=Sensor_AA_BT visibility=[Sensor_AB_BT<10.5]
+		Text item=Sensor_AA_BT visibility=[Sensor_AC_BT<10.5]
+		Text item=Sensor_AA_BT visibility=[Sensor_AD_BT<10.5]		
+		
+	}
 }
 
