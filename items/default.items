@@ -77,10 +77,10 @@ Number Sensor_AB 				"Living Room Temperature [%.1f °C]" 	<temperature> 	(Senso
 Number Sensor_AC 				"Guest room Temperature [%.1f °C]"	 	<temperature> 	(Sensor_Chart)
 Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
 
-Number Sensor_AA_BT 			"Bedroom sensor battery [%.1f V] "			<battery> 	(Battery)
-Number Sensor_AB_BT 			"Living room sensor battery [%.1f V] "		<battery>	(Battery)
-Number Sensor_AC_BT 			"Guest room sensor battery [%.1f V] "		<battery>	(Battery)
-Number Sensor_AD_BT 			"Outside sensor battery  [%.1f V] "			<battery>	(Battery)
+Number Sensor_AA_BT 			"Bedroom sensor battery [%.2f V] "			<battery> 	(Battery)
+Number Sensor_AB_BT 			"Living room sensor battery [%.2f V] "		<battery>	(Battery)
+Number Sensor_AC_BT 			"Guest room sensor battery [%.2f V] "		<battery>	(Battery)
+Number Sensor_AD_BT 			"Outside sensor battery  [%.2f V] "			<battery>	(Battery)
 
 
 /* Switches */
