@@ -104,6 +104,7 @@ sitemap demo label="Elizabeth House"
 		Text item=BR_Radiator_HS
 		Text item=LR_Radiator_Window_HS
 		Text item=LR_Radiator_Door_HS
+		Setpoint item=BR_Radiator_HS step=0.5 minValue=18 maxValue=30
 	}		
 }
 
