@@ -135,6 +135,8 @@ then
 			logInfo("Sensor", "Sensor " + id + " is awake")
 			var temperatureCommand = "a" + id + "TEMP-----"
 			Sensor.sendCommand(temperatureCommand)
+			var batteryCommand = "a" + id + "BATT-----"
+			Sensor.sendCommand(batteryCommand)
 		} else if (message.contains("TEMP") && !message.contains('-')){
 			var String tempStr = message.substring(6)
 			var temp = new Double(tempStr)
@@ -155,20 +157,38 @@ then
 					postUpdate(Sensor_LastUpdate_AD, new DateTimeType())
 				}
 			}			
+		} else if (message.contains("BATT") && !message.contains('-')){
+			var String battStr = message.substring(6)
+			var batt = new Double(battStr)
+			logInfo("Sensor", "Battery status " + batt)
+			var id = message.substring(0, 2)
+			if (batt < 20) {			
+				if (id.equals("AA")){
+					Sensor_AA_BT.postUpdate(batt)					
+				} else if (id.equals("AB")){
+					Sensor_AB_BT.postUpdate(batt)
+				} else if (id.equals("AC")){
+					Sensor_AC_BT.postUpdate(batt)				
+				} else if (id.equals("AD")){
+					Sensor_AD_BT.postUpdate(batt)				
+				}
+			}			
 			var sleepCommand = "a" + id + "SLEEP" + "015M"
-			Sensor.sendCommand(sleepCommand)					
+			Sensor.sendCommand(sleepCommand)						
 		} else if (message.contains("BATTLOW")) {
 			var id = message.substring(0, 2)
 			logInfo("Sensor", "Sensor " + id + " battery is low.")
 			if (id.equals("AA")){
-				Sensor_AA_BT.postUpdate("LOW")
+				Sensor_AA_BT.postUpdate(0)
 			} else if (id.equals("AB")){
-				Sensor_AB_BT.postUpdate("LOW")
+				Sensor_AB_BT.postUpdate(0)
 			} else if (id.equals("AC")){
-				Sensor_AC_BT.postUpdate("LOW")
+				Sensor_AC_BT.postUpdate(0)
 			} else if (id.equals("AD")){
-				Sensor_AD_BT.postUpdate("LOW")
+				Sensor_AD_BT.postUpdate(0)
 			}
+			var sleepCommand = "a" + id + "SLEEP" + "015M"
+			Sensor.sendCommand(sleepCommand)	
 		}
 	]
 end

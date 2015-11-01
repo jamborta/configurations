@@ -37,10 +37,10 @@ sitemap demo label="Elizabeth House"
 	
 	Frame label="Temperature" {
 		
-		Text item=Sensor_AA_BT visibility=[Sensor_AA_BT=="LOW"]
-		Text item=Sensor_AA_BT visibility=[Sensor_AB_BT=="LOW"]
-		Text item=Sensor_AA_BT visibility=[Sensor_AC_BT=="LOW"]
-		Text item=Sensor_AA_BT visibility=[Sensor_AD_BT=="LOW"]
+		Text item=Sensor_AA_BT visibility=[Sensor_AA_BT<10.5]
+		Text item=Sensor_AA_BT visibility=[Sensor_AB_BT<10.5]
+		Text item=Sensor_AA_BT visibility=[Sensor_AC_BT<10.5]
+		Text item=Sensor_AA_BT visibility=[Sensor_AD_BT<10.5]
 		
 		Text item=Sensor_AA valuecolor=[Sensor_AA=="Uninitialised"="lightgray",Sensor_LastUpdate_AA>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
 			Frame {
