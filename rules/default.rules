@@ -114,10 +114,10 @@ when
 	Time cron "0 */15 * * * ?" or
 	System started
 then
-	Sensor.sendCommand("aAATEMP-----")
-	Sensor.sendCommand("aABTEMP-----")
-	Sensor.sendCommand("aACTEMP-----")
-	Sensor.sendCommand("aADTEMP-----")
+	Sensor.sendCommand("aAABATT-----")
+	Sensor.sendCommand("aABBATT-----")
+	Sensor.sendCommand("aACBATT-----")
+	Sensor.sendCommand("aADBATT-----")
 end
 
 rule "Temp Update"
