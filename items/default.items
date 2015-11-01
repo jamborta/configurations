@@ -114,7 +114,7 @@ Number Energy_Cum_Period    	"Chart Period"
 String strSunset "Sunset" <clock> (Weather) { http="<[http://api.wunderground.com/api/0e21261e162b037e/astronomy/q/UK/wembley.xml:21600000:XSLT(wunderground_sunset.xsl)]" }
 
 /* Heating */
-Number LR_Window_Radiator_BT	"Battery Status LR Window [%.1f %]"			(Heating)				{ zwave="5:0:command=BATTERY" }
-Number LR_Door_Radiator_BT		"Battery Status LR Door [%.1f %]"			(Heating)				{ zwave="6:0:command=BATTERY" }
+Number LR_Window_Radiator_BT	"Battery Status LR Window [%d %%]"			(Heating)				{ zwave="5:0:command=BATTERY" }
+Number LR_Door_Radiator_BT		"Battery Status LR Door [%d %%]"			(Heating)				{ zwave="6:0:command=BATTERY" }
 
 
