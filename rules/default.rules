@@ -158,7 +158,7 @@ then
 				}
 			}			
 		} else if (message.contains("BATT") && message.contains('-')){
-			var String battStr = message.substring(6)
+			var String battStr = message.substring(6, 10)
 			var batt = new Double(battStr)
 			logInfo("Sensor", "Battery status " + batt)
 			var id = message.substring(0, 2)
