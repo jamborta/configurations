@@ -76,6 +76,12 @@ Number Sensor_AB 				"Living Room Temperature [%.1f °C]" 	<temperature> 	(Senso
 Number Sensor_AC 				"Guest room Temperature [%.1f °C]"	 	<temperature> 	(Sensor_Chart)
 Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
 
+String Sensor_AA_BT 			"Bedroom sensor battery is %s "			<battery>
+String Sensor_AB_BT 			"Living sensor batter is %s"   			<battery>
+String Sensor_AC_BT 			"Guest room sensor batter is %s"		<battery>
+String Sensor_AD_BT 			"Outside sensor battery is %s"			<battery>
+
+
 /* Switches */
 Group Lightwave_Switches			(Switches)
 Switch Bathroom_Vent            "Bathroom Ventilation"                  <light>         (Lightwave_Switches)  { lightwaverf="room=1,device=5,type=SWITCH" }
@@ -94,12 +100,12 @@ Number  Node_3_UV     			"Bedroom UV [%.1f]"        			 	<temperature>  (Zwave_S
 Number  Node_3_Lum     			"Bedroom Luminance [%.1f]"        		<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
 Contact Node_3_Motion     		"Bedroom Motion [MAP(en.map):%s]"	 	<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
 
-Number Sensor_Chart_Period		"Sensor Chart Period"
+Number Sensor_Chart_Period			"Sensor Chart Period"
 DateTime Sensor_LastUpdate_AA		"Last Update (Bedroom) [%1$ta %1$tR]"				<clock>
 DateTime Sensor_LastUpdate_AB		"Last Update (Living Room) [%1$ta %1$tR]"			<clock>
 DateTime Sensor_LastUpdate_AC		"Last Update (Guest room) [%1$ta %1$tR]"			<clock>
 DateTime Sensor_LastUpdate_AD		"Last Update (Outside) [%1$ta %1$tR]"				<clock>
-DateTime LR_Motion_On_LastUpdate 		"Last Update (Living Room Motion) [%1$ta %1$tR]"	<clock>
+DateTime LR_Motion_On_LastUpdate 	"Last Update (Living Room Motion) [%1$ta %1$tR]"	<clock>
 
 /* Energy measurements */
 Group Energy_Today_Group		(Energy)

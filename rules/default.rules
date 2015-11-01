@@ -130,6 +130,7 @@ then
 			logInfo("Sensor", "Sensor update: " + message)
 		}
 		if (message.contains("AWAKE")) {
+			Sensor_AA_BT.postUpdate("LOW")
 			var id = message.substring(0, 2)
 			logInfo("Sensor", "Sensor " + id + " is awake")
 			var temperatureCommand = "a" + id + "TEMP-----"
@@ -156,6 +157,18 @@ then
 			}			
 			var sleepCommand = "a" + id + "SLEEP" + "015M"
 			Sensor.sendCommand(sleepCommand)					
+		} else if (message.contains("BATTLOW")) {
+			var id = message.substring(0, 2)
+			logInfo("Sensor", "Sensor " + id + " battery is low.")
+			if (id.equals("AA")){
+				Sensor_AA_BT.postUpdate("LOW")
+			} else if (id.equals("AB")){
+				Sensor_AB_BT.postUpdate("LOW")
+			} else if (id.equals("AC")){
+				Sensor_AC_BT.postUpdate("LOW")
+			} else if (id.equals("AD")){
+				Sensor_AD_BT.postUpdate("LOW")
+			}
 		}
 	]
 end
