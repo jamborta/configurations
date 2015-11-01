@@ -328,9 +328,9 @@ rule "Temperature summary"
 when
     Item Sensor_AA changed
     or Item Sensor_AB changed
-    or Item Energy_Current changed
+    or Item Sensor_AC changed
 then
-    Temp_combined.postUpdate(Sensor_AA.state.format("%.1f") + "C/" + Sensor_AB.state.format("%.1f") + "C/" + Energy_Current.state.format("%.1f"))
+    Temp_combined.postUpdate(Sensor_AA.state.format("%.1f") + " °C/ " + Sensor_AB.state.format("%.1f") + " °C/ " + Sensor_AC.state.format("%.1f") + " °C")
 end
 
 
