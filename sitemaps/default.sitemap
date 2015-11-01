@@ -89,6 +89,12 @@ sitemap demo label="Elizabeth House"
 				Chart item=Humidity_Chart period=D refresh=30000 visibility=[Humidity_Chart_Period==1]
 				Chart item=Humidity_Chart period=W refresh=30000 visibility=[Humidity_Chart_Period==2]
 			}
+			Frame {
+				Switch item=AP_Chart_Period label="Air Pressure Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+				Chart item=AP_Chart period=h refresh=6000 visibility=[AP_Chart_Period==0, AP_Chart_Period=="Uninitialized"]
+				Chart item=AP_Chart period=D refresh=30000 visibility=[AP_Chart_Period==1]
+				Chart item=AP_Chart period=W refresh=30000 visibility=[AP_Chart_Period==2]
+			}
 		}
 	}
 }
