@@ -330,7 +330,7 @@ when
     or Item Sensor_AB changed
     or Item Energy_Current changed
 then
-    Temp_combined.postUpdate(String::format("%.2f / %.2f / %.2f", Sensor_AA.state, Sensor_AB.state, Energy_Current.state))
+    Temp_combined.postUpdate(String::format("%.2f / %.2f / %.2f", Sensor_AA.state as DecimalType, Sensor_AB.state as DecimalType, Energy_Current.state as DecimalType))
 end
 
 
