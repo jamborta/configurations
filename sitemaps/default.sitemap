@@ -97,5 +97,9 @@ sitemap demo label="Elizabeth House"
 			}
 		}
 	}
+	Frame label="Heating" {
+		Text item=LR_Window_Radiator_BT
+		Text item=LR_Door_Radiator_BT
+	}		
 }
 
