@@ -13,8 +13,8 @@ Group Lights_Moods				"Lights Moods"		<video>		(Bedroom)
 
 
 /* active groups */
-Group:Switch:OR(ON, OFF) 		Lights_LR		"Living Room Lights [(%d)]"    (All)
-Group:Switch:OR(ON, OFF) 		Lights_BR		"Bedroom Lights [(%d)]"    (All)
+Group:Switch:OR(ON, OFF) 		Lights_LR		"LR Lights [(%d)]"    (All)
+Group:Switch:OR(ON, OFF) 		Lights_BR		"BR Lights [(%d)]"    (All)
 
 /* Lights */
 Switch Light_LR_All_White   "All White"         (Ligths_Control)          	{milight="bridge1;0"}
