@@ -330,7 +330,7 @@ when
     or Item Sensor_AB changed
     or Item Sensor_AC changed
 then
-    Temp_combined.postUpdate(String::format("%02d / %02d / %02d", Sensor_AA, Sensor_AB, Sensor_AC))
+    Temp_combined.postUpdate(String::format("%02d / %02d / %02d", Sensor_AA.state, Sensor_AB.state, Sensor_AC.state))
 end
 
 
