@@ -2,8 +2,8 @@ sitemap demo label="Elizabeth House"
 {
 	Frame {
 		Group item=Living_Room label="Living Room" icon="groundfloor" {
-			Group item=Ligths_Control
 			Switch item=Livingroom_Moods label="Moods" mappings=[0="Bright", 1="Green", 2="Relax"]
+			Group item=Ligths_Control
 		}
 		Group item=Bedroom label="Bedroom" icon="bedroom" {
 			Group item=Ligths_Control_Bedroom
@@ -99,6 +99,7 @@ sitemap demo label="Elizabeth House"
 			}
 		}
 	}
+	
 	Frame label="Heating" {
 		Setpoint item=BR_Radiator_HS step=0.5 minValue=18 maxValue=30
 		Setpoint item=LR_Radiator_Window_HS step=0.5 minValue=18 maxValue=30
@@ -113,7 +114,6 @@ sitemap demo label="Elizabeth House"
 		Text item=Sensor_AA_BT visibility=[Sensor_AB_BT<10.5]
 		Text item=Sensor_AA_BT visibility=[Sensor_AC_BT<10.5]
 		Text item=Sensor_AA_BT visibility=[Sensor_AD_BT<10.5]		
-		
 	}
 }
 
