@@ -130,7 +130,6 @@ then
 			logInfo("Sensor", "Sensor update: " + message)
 		}
 		if (message.contains("AWAKE")) {
-			Sensor_AA_BT.postUpdate("LOW")
 			var id = message.substring(0, 2)
 			logInfo("Sensor", "Sensor " + id + " is awake")
 			var temperatureCommand = "a" + id + "TEMP-----"
