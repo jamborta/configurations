@@ -136,10 +136,10 @@ sitemap demo label="Elizabeth House"
 		Text item=BR_Radiator_BT visibility=[BR_Radiator_BT<10] valuecolor=[BR_Radiator_BT<10="orange", BR_Radiator_BT<5="red"]
 		Text item=LR_Radiator_Window_BT visibility=[LR_Radiator_Window_BT<10] valuecolor=[LR_Radiator_Window_BT<10="orange", LR_Radiator_Window_BT<5="red"]
 		Text item=LR_Radiator_Door_BT visibility=[LR_Radiator_Door_BT<10] valuecolor=[LR_Radiator_Door_BT<10="orange", LR_Radiator_Door_BT<5="red"]
-		Text item=Sensor_AA_BT //visibility=[Sensor_AA_BT<10.5]
-		Text item=Sensor_AB_BT //visibility=[Sensor_AB_BT<10.5]
-		Text item=Sensor_AC_BT //visibility=[Sensor_AC_BT<10.5]
-		Text item=Sensor_AD_BT //visibility=[Sensor_AD_BT<10.5]		
+		Text item=Sensor_AA_BT visibility=[Sensor_AA_BT<2.5]
+		Text item=Sensor_AB_BT visibility=[Sensor_AB_BT<2.5]
+		Text item=Sensor_AC_BT visibility=[Sensor_AC_BT<2.5]
+		Text item=Sensor_AD_BT visibility=[Sensor_AD_BT<2.5]		
 	}
 }
 
