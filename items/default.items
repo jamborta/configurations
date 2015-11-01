@@ -76,10 +76,10 @@ Number Sensor_AB 				"Living Room Temperature [%.1f °C]" 	<temperature> 	(Senso
 Number Sensor_AC 				"Guest room Temperature [%.1f °C]"	 	<temperature> 	(Sensor_Chart)
 Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
 
-String Sensor_AA_BT 			"Bedroom sensor battery is [%s] "			<battery>
-String Sensor_AB_BT 			"Living sensor batter is [%s] "   			<battery>
-String Sensor_AC_BT 			"Guest room sensor batter is [%s] "			<battery>
-String Sensor_AD_BT 			"Outside sensor battery is [%s] "			<battery>
+String Sensor_AA_BT 			"Bedroom sensor battery is [MAP(en.map):%s] "			<battery>
+String Sensor_AB_BT 			"Living sensor batter is [MAP(en.map):%s] "   			<battery>
+String Sensor_AC_BT 			"Guest room sensor batter is [MAP(en.map):%s] "			<battery>
+String Sensor_AD_BT 			"Outside sensor battery is [MAP(en.map):%s] "			<battery>
 
 
 /* Switches */
