@@ -98,9 +98,9 @@ sitemap demo label="Elizabeth House"
 		}
 	}
 	Frame label="Heating" {
-		Text item=BR_Radiator_BT
-		Text item=LR_Radiator_Window_BT
-		Text item=LR_Radiator_Door_BT
+		Text item=BR_Radiator_BT visibility=[BR_Radiator_BT>10] valuecolor=[BR_Radiator_BT>10="orange", BR_Radiator_BT>5="red"]
+		Text item=LR_Radiator_Window_BT visibility=[LR_Radiator_Window_BT>10] valuecolor=[LR_Radiator_Window_BT>10="orange", LR_Radiator_Window_BT>5="red"]
+		Text item=LR_Radiator_Door_BT visibility=[LR_Radiator_Door_BT>10] valuecolor=[LR_Radiator_Door_BT>10="orange", LR_Radiator_Door_BT>5="red"]
 		Setpoint item=BR_Radiator_HS step=0.5 minValue=18 maxValue=30
 		Setpoint item=LR_Radiator_Window_HS step=0.5 minValue=18 maxValue=30
 		Setpoint item=LR_Radiator_Door_HS step=0.5 minValue=18 maxValue=30
