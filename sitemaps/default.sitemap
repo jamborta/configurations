@@ -98,10 +98,12 @@ sitemap demo label="Elizabeth House"
 		}
 	}
 	Frame label="Heating" {
-		Text item=LR_Window_Radiator_BT
-		Text item=LR_Door_Radiator_BT
-		Text item=Down_HVAC_HeatSetPoint
-		Text item=Down_HVAC_CoolSetPoint
+		Text item=BR_Radiator_BT
+		Text item=LR_Radiator_Window_BT
+		Text item=LR_Radiator_Door_BT
+		Text item=BR_Radiator_HS
+		Text item=LR_Radiator_Window_HS
+		Text item=LR_Radiator_Door_HS
 	}		
 }
 
