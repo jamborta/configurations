@@ -23,5 +23,5 @@ Items {
 	Energy_Today, Energy_Current, Energy_Max : strategy = everyChange, restoreOnStartup
 	Sensor_Chart* : strategy = everyChange, restoreOnStartup
 	Zwave_Sensors* : strategy = everyChange, restoreOnStartup
-	Battery* : strategy = everyChange, restoreOnStartup
+	Battery* : strategy = everyChange
 }
