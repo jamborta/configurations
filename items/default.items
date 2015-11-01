@@ -76,6 +76,7 @@ Number Sensor_AA 				"Bedroom Temperature [%.1f °C]" 		<temperature> 	(Sensor_C
 Number Sensor_AB 				"Living Room Temperature [%.1f °C]" 	<temperature> 	(Sensor_Chart)
 Number Sensor_AC 				"Guest room Temperature [%.1f °C]"	 	<temperature> 	(Sensor_Chart)
 Number Sensor_AD 				"Outside Temperature [%.1f °C]" 		<temperature> 	(Sensor_Chart)
+String Temp_combined            "BR/LR/GR  [%s]"	    				<temperature>
 
 Number Sensor_AA_BT 			"Bedroom sensor battery [%.2f V] "			<battery> 	(Battery)
 Number Sensor_AB_BT 			"Living room sensor battery [%.2f V] "		<battery>	(Battery)
