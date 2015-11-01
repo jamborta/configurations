@@ -120,6 +120,7 @@ Number Energy_Current_Period	"Chart Period"
 Number Energy_Cum_Period    	"Chart Period"
 
 String strSunset "Sunset" <clock> (Weather) { http="<[http://api.wunderground.com/api/0e21261e162b037e/astronomy/q/UK/wembley.xml:21600000:XSLT(wunderground_sunset.xsl)]" }
+Switch SunsetTimer
 
 /* Heating */
 Number BR_Radiator_BT			"Battery Status BR [%d %%]"						(Heating, Battery)		{ zwave="4:command=BATTERY" }

@@ -282,38 +282,46 @@ when
 		postUpdate(LR_Motion_On_LastUpdate, new DateTimeType())
 end
 
+rule "Turn Sunset timer on"
+when 
+    Time cron "0 0 15 * * ?"   // Every day 15:00 hours, enable checking
+then
+	SunsetTimer.postUpdate(ON)
+end
+
 
 rule "Lights On At Sunset"
 when
-    Time cron "0 0 16 * * ?"   // Every day 16:00 hours, start timer
-	then 
-        var year   = now.getYear
-        var month  = now.getMonthOfYear
-        var day    = now.getDayOfMonth
-        var datum  = year+"-"+month+"-"+day+" "+strSunset.state
-        logInfo("Sunset","datum = " + datum)
-        var DateTime sunset = parse(year+"-"+month+"-"+day+"T"+strSunset.state)
-
-        /*
-         * Indoor Lights
-         */
-         // Cancel timer to avoid reschedule
-        if(tIndoorLightsFirst!=null) {
-        	logInfo("Sunset","Timer tIndoorLights cancelled") 
-        	tIndoorLightsFirst.cancel()
-        	tIndoorLightsSecond.cancel()
+	Item Node_2_Lum changed
+then 
+	if (SunsetTimer == ON){
+	        var year   = now.getYear
+	        var month  = now.getMonthOfYear
+	        var day    = now.getDayOfMonth
+	        var datum  = year+"-"+month+"-"+day+" "+strSunset.state
+	        logInfo("Sunset","datum = " + datum)
+	        val DateTime sunset = parse(year+"-"+month+"-"+day+"T"+strSunset.state)
+			val DateTime sunsetMinus20mins = sunset.minusMinutes(20)
+			val DateTime sunsetPlus20mins = sunset.plusMinutes(20)
+		
+	        if (now.isAfter(sunsetMinus20mins) && now.isBefore(sunsetPlus20mins) && Node_2_Lum.state < 5){
+	        	//Check if there is someone in the room
+	        	val DateTime lastUpdate = new DateTime((LR_Motion_On_LastUpdate.state as DateTimeType).calendar.timeInMillis)
+	        	if (lastUpdate.isAfter(now.minusMinutes(20))){
+	        		logInfo("Sunset","First timer IndoorLights executed") 
+	        		sendCommand(Light_LR_Kitchen_D, "30") 
+					sendCommand(Light_LR_Kitchen, "ON")
+					//No more light switching today
+					SunsetTimer.postUpdate(OFF)
+					tIndoorLightsSecond = createTimer(now.plusMinutes(60)) [|
+	        			logInfo("Sunset","Second timer IndoorLights executed") 
+						sendCommand(Light_LR_Kitchen_D, "80") 
+						sendCommand(Light_LR_Kitchen, "ON")]
+				} else {
+					logInfo("Sunset", "Tried timer but no one in the room")
+				}
+	        }
         }
-        logInfo("Sunset","Timer tIndoorLights created") 
-        tIndoorLightsFirst = createTimer(sunset.minusMinutes(15)) [|
-        	logInfo("Sunset","Timer tIndoorLights executed")
-        	sendCommand(Light_LR_Kitchen_D, "30") 
-			sendCommand(Light_LR_Kitchen, "ON")
-        ]
-        tIndoorLightsSecond = createTimer(sunset.plusMinutes(80)) [|
-        	logInfo("Sunset","Timer tIndoorLights executed") 
-			sendCommand(Light_LR_Kitchen_D, "80") 
-			sendCommand(Light_LR_Kitchen, "ON")
-        ]
 end
 
 rule "Temperature summary"
