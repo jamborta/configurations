@@ -294,7 +294,7 @@ rule "Lights On At Sunset"
 when
 	Item Node_2_Lum changed
 then 
-	if (SunsetTimer == ON){
+	if (SunsetTimer.state == ON){
 	        var year   = now.getYear
 	        var month  = now.getMonthOfYear
 	        var day    = now.getDayOfMonth
