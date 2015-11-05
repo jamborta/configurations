@@ -126,9 +126,11 @@ Switch SunsetTimer
 Number BR_Radiator_BT			"Battery Status BR [%d %%]"						(Heating, Battery)		{ zwave="4:command=BATTERY" }
 Number LR_Radiator_Window_BT	"Battery Status LR Window [%d %%]"				(Heating, Battery)		{ zwave="5:command=BATTERY" }
 Number LR_Radiator_Door_BT		"Battery Status LR Door [%d %%]"				(Heating, Battery)		{ zwave="6:command=BATTERY" }
+Number GR_Radiator_BT			"Battery Status GR [%d %%]"						(Heating, Battery)		{ zwave="7:command=BATTERY" }
 Number BR_Radiator_HS 			"Heat Set BR [%.1f °C]"   		<thermostat>    (Heating) 				{ zwave="4:command=thermostat_setpoint,setpoint_type=1,setpoint_scale=0" }
 Number LR_Radiator_Window_HS 	"Heat Set LR Window [%.1f °C]"	<thermostat>    (Heating) 				{ zwave="5:command=thermostat_setpoint,setpoint_type=1,setpoint_scale=0" }
 Number LR_Radiator_Door_HS 		"Heat Set LR Door [%.1f °C]"   	<thermostat>    (Heating) 				{ zwave="6:command=thermostat_setpoint,setpoint_type=1,setpoint_scale=0" }
+Number GR_Radiator_HS 			"Heat Set GR [%.1f °C]"   		<thermostat>    (Heating) 				{ zwave="7:command=thermostat_setpoint,setpoint_type=1,setpoint_scale=0" }
 
 
 
