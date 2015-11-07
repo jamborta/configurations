@@ -131,10 +131,6 @@ sitemap demo label="Elizabeth House"
 		Setpoint item=LR_Radiator_Window_HS step=0.5 minValue=18 maxValue=30
 		Setpoint item=LR_Radiator_Door_HS step=0.5 minValue=18 maxValue=30
 		Setpoint item=GR_Radiator_HS step=0.5 minValue=18 maxValue=30	
-		Text item=BR_Radiator_OS	
-		Text item=LR_Radiator_Window_OS	
-		Text item=LR_Radiator_Door_OS	
-		Text item=GR_Radiator_OS	
 	}		
 	
 	Frame label="Battery Status" {
