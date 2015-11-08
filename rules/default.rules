@@ -301,8 +301,8 @@ then
 	        var datum  = year+"-"+month+"-"+day+" "+strSunset.state
 	        logInfo("Sunset","datum = " + datum)
 	        val DateTime sunset = parse(year+"-"+month+"-"+day+"T"+strSunset.state)
-			val DateTime sunsetMinus20mins = sunset.minusMinutes(20)
-			val DateTime sunsetPlus20mins = sunset.plusMinutes(20)
+			val DateTime sunsetMinus20mins = sunset.minusMinutes(40)
+			val DateTime sunsetPlus20mins = sunset.plusMinutes(40)
 		
 	        if (now.isAfter(sunsetMinus20mins) && now.isBefore(sunsetPlus20mins) && Node_2_Lum.state < 5){
 	        	//Check if there is someone in the room
