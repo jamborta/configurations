@@ -292,7 +292,7 @@ end
 
 rule "Lights On At Sunset"
 when
-	Item Node_2_Lum changed
+	Item Node_2_Lum received update
 then 
 	if (SunsetTimer.state == ON){
 	        var year   = now.getYear
