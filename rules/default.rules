@@ -309,14 +309,14 @@ then
 	        	val DateTime lastUpdate = new DateTime((LR_Motion_On_LastUpdate.state as DateTimeType).calendar.timeInMillis)
 	        	if (lastUpdate.isAfter(now.minusMinutes(20))){
 	        		logInfo("Sunset","First timer IndoorLights executed") 
-	        		sendCommand(Light_LR_Kitchen_D, "30") 
+	        		sendCommand(Light_LR_Kitchen_D, "40") 
 					sendCommand(Light_LR_Kitchen, "ON")
 					//No more light switching today
 					SunsetTimer.postUpdate(OFF)
-					tIndoorLightsSecond = createTimer(now.plusMinutes(60)) [|
-	        			logInfo("Sunset","Second timer IndoorLights executed") 
-						sendCommand(Light_LR_Kitchen_D, "80") 
-						sendCommand(Light_LR_Kitchen, "ON")]
+//					tIndoorLightsSecond = createTimer(now.plusMinutes(60)) [|
+//	        			logInfo("Sunset","Second timer IndoorLights executed") 
+//						sendCommand(Light_LR_Kitchen_D, "80") 
+//						sendCommand(Light_LR_Kitchen, "ON")]
 				} else {
 					SunsetTimer.postUpdate(OFF)
 					logInfo("Sunset", "Tried timer but no one in the room")
