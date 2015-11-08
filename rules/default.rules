@@ -301,10 +301,10 @@ then
 	        var datum  = year+"-"+month+"-"+day+" "+strSunset.state
 	        logInfo("Sunset","datum = " + datum)
 	        val DateTime sunset = parse(year+"-"+month+"-"+day+"T"+strSunset.state)
-			val DateTime sunsetMinus20mins = sunset.minusMinutes(40)
-			val DateTime sunsetPlus20mins = sunset.plusMinutes(40)
+			val DateTime sunsetMinus40mins = sunset.minusMinutes(40)
+			val DateTime sunsetPlus40mins = sunset.plusMinutes(40)
 		
-	        if (now.isAfter(sunsetMinus20mins) && now.isBefore(sunsetPlus20mins) && Node_2_Lum.state < 5){
+	        if (now.isAfter(sunsetMinus40mins) && now.isBefore(sunsetPlus40mins) && Node_2_Lum.state < 5){
 	        	//Check if there is someone in the room
 	        	val DateTime lastUpdate = new DateTime((LR_Motion_On_LastUpdate.state as DateTimeType).calendar.timeInMillis)
 	        	if (lastUpdate.isAfter(now.minusMinutes(20))){
