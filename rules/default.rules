@@ -283,6 +283,24 @@ when
 		}
 end
 
+rule "Set heating ALL"
+when
+	Item ALL_Heating received command
+	then
+		switch(receivedCommand) {
+			case ON : {
+				sendCommand(LR_Heating, ON)
+				sendCommand(GR_Heating, ON)
+				sendCommand(BR_Heating, ON)				
+			}
+			case OFF : {
+				sendCommand(LR_Heating, OFF)
+				sendCommand(GR_Heating, OFF)
+				sendCommand(BR_Heating, OFF)	
+				}
+		}	
+end
+
 rule "Set mood"
 when  
 	Item Bedroom_Moods received command
