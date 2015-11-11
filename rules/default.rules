@@ -276,7 +276,7 @@ when
 			}
 			case OFF : {
 				sendCommand(GR_Radiator_HS, "5")
-				if (LR_Heating.state == OFF && GR_Heating.state == OFF){
+				if (LR_Heating.state == OFF && BR_Heating.state == OFF){
 					sendCommand(Boiler_Switch, OFF)
 				}
 			}	
