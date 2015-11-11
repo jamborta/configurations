@@ -227,16 +227,18 @@ then
 	}
 end
 
-//rule "Set heating"
-//when
-//	Item Heating_On received command
-//	then
-//		switch(receivedCommand) {
-//			case 0 : {
-//				
-//			}
-//		}
-//end
+rule "Set heating LR"
+when
+	Item LR_Heating received command
+	then
+		switch(receivedCommand) {
+			case ON : {
+				sendCommand(Boiler_Switch, ON)
+				sendCommand(LR_Radiator_Door_HS, "22")
+				sendCommand(LR_Radiator_Window_HS, "22")	
+			}	
+		}
+end
 		
 
 rule "Set mood"
