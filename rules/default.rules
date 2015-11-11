@@ -236,6 +236,13 @@ when
 				sendCommand(Boiler_Switch, ON)
 				sendCommand(LR_Radiator_Door_HS, "22")
 				sendCommand(LR_Radiator_Window_HS, "22")	
+			}
+			case OFF : {
+				sendCommand(LR_Radiator_Door_HS, "5")
+				sendCommand(LR_Radiator_Door_HS, "5")
+				if (BR_Heating.state == OFF && GR_Heating.state == OFF){
+					sendCommand(Boiler_Switch, ON)
+				}
 			}	
 		}
 end
