@@ -123,6 +123,11 @@ String strSunset "Sunset" <clock> (Weather) { http="<[http://api.wunderground.co
 Switch SunsetTimer
 
 /* Heating */
+Switch LR_Heating				"LR Heating"									(Heating)
+Switch BR_Heating				"BR Heating"									(Heating)
+Switch GR_Heating				"GR Heating"									(Heating)
+Switch ALL_Heating				"ALL Flat"										(Heating)
+Switch Boiler_Switch			"Boiler"										(Heating)				{ lightwaverf="room=1,device=6,type=SWITCH" }
 Number BR_Radiator_BT			"Battery Status BR [%d %%]"						(Heating, Battery)		{ zwave="4:command=BATTERY" }
 Number LR_Radiator_Window_BT	"Battery Status LR Window [%d %%]"				(Heating, Battery)		{ zwave="5:command=BATTERY" }
 Number LR_Radiator_Door_BT		"Battery Status LR Door [%d %%]"				(Heating, Battery)		{ zwave="6:command=BATTERY" }
