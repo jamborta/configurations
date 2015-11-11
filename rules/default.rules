@@ -246,7 +246,42 @@ when
 			}	
 		}
 end
-		
+
+rule "Set heating BR"
+when
+	Item BR_Heating received command
+	then
+		switch(receivedCommand) {
+			case ON : {
+				sendCommand(Boiler_Switch, ON)
+				sendCommand(BR_Radiator_HS, "22")	
+			}
+			case OFF : {
+				sendCommand(BR_Radiator_HS, "5")
+				if (LR_Heating.state == OFF && GR_Heating.state == OFF){
+					sendCommand(Boiler_Switch, OFF)
+				}
+			}	
+		}
+end		
+
+rule "Set heating GR"
+when
+	Item GR_Heating received command
+	then
+		switch(receivedCommand) {
+			case ON : {
+				sendCommand(Boiler_Switch, ON)
+				sendCommand(GR_Radiator_HS, "22")
+			}
+			case OFF : {
+				sendCommand(GR_Radiator_HS, "5")
+				if (LR_Heating.state == OFF && GR_Heating.state == OFF){
+					sendCommand(Boiler_Switch, OFF)
+				}
+			}	
+		}
+end
 
 rule "Set mood"
 when  
