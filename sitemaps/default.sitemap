@@ -1,4 +1,4 @@
-sitemap demo label="Elizabeth House"
+sitemap default label="Elizabeth House"
 {
 	Frame {
 		Group item=Living_Room label="Living Room" icon="groundfloor" {
