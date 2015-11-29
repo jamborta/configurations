@@ -138,7 +138,9 @@ sitemap default label="Elizabeth House"
 		Setpoint item=GR_Radiator_HS step=0.5 minValue=18 maxValue=30	
 	}		
 	
-	Group item=Sonos
+	Frame {
+		Group item=Sonos
+	}
 	
 	Frame label="Battery Status" {
 		Text item=BR_Radiator_BT visibility=[BR_Radiator_BT<10] valuecolor=[BR_Radiator_BT<10="orange", BR_Radiator_BT<5="red"]
