@@ -139,10 +139,10 @@ Number LR_Radiator_Door_HS 		"Heat Set LR Door [%.1f °C]"   	<thermostat>    (H
 Number GR_Radiator_HS 			"Heat Set GR [%.1f °C]"   		<thermostat>    (Heating) 				{ zwave="7:command=thermostat_setpoint,setpoint_type=1,setpoint_scale=0" }
 
 /* Sonos */
-String currenttrackBR  "[%s]"  				  (Sonos)   {sonos="[br:currenttrack]", autoupdate="false"}
+String currenttrackBR  "BR: [%s]"  			  (Sonos)   {sonos="[br:currenttrack]", autoupdate="false"}
 Switch PlayBR		   "Play/Pause BR"        (Sonos)   {sonos="[ON:br:play],[OFF:br:pause]"}
 Switch NextBR          "Next track"     	  (Sonos)   {sonos="[ON:br:next]"}
-String currenttrackLR  "[%s]"  				  (Sonos)   {sonos="[lr:currenttrack]", autoupdate="false"}
+String currenttrackLR  "LR: [%s]"  			  (Sonos)   {sonos="[lr:currenttrack]", autoupdate="false"}
 Switch PlayLR          "Play/Pause LR"        (Sonos)   {sonos="[ON:lr:play],[OFF:lr:pause]"}
 Switch NextLR          "Next track"     	  (Sonos)   {sonos="[ON:lr:next]"}
 
