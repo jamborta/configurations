@@ -141,6 +141,9 @@ Number GR_Radiator_HS 			"Heat Set GR [%.1f °C]"   		<thermostat>    (Heating) 
 /* Sonos */
 String currenttrackLR  "CurrentTrack LR [%s]"  (Sonos)   {sonos="[lr:currenttrack]", autoupdate="true"}
 String currenttrackBR  "CurrentTrack BR [%s]"  (Sonos)   {sonos="[br:currenttrack]", autoupdate="false"}
+Switch PlayBR		   "Play/Pause"        (Sonos)   {sonos="[ON:br:play],[OFF:br:pause]"}
+Switch PlayLR          "Play/Pause"        (Sonos)   {sonos="[ON:br:play],[OFF:br:pause]"}
+
 
 
 
