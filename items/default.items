@@ -7,6 +7,7 @@ Group Sensors		(All)
 Group Switches		(All)
 Group Heating		(All)
 Group Battery		(All)
+Group Sonos			(All)
 
 Group Ligths_Control 			"Lights Control" 	<video> 	(Living_Room)
 Group Ligths_Control_Bedroom 	"Lights Control" 	<video> 	(Bedroom)
@@ -136,6 +137,11 @@ Number BR_Radiator_HS 			"Heat Set BR [%.1f °C]"   		<thermostat>    (Heating) 
 Number LR_Radiator_Window_HS 	"Heat Set LR Window [%.1f °C]"	<thermostat>    (Heating) 				{ zwave="5:command=thermostat_setpoint,setpoint_type=1,setpoint_scale=0" }
 Number LR_Radiator_Door_HS 		"Heat Set LR Door [%.1f °C]"   	<thermostat>    (Heating) 				{ zwave="6:command=thermostat_setpoint,setpoint_type=1,setpoint_scale=0" }
 Number GR_Radiator_HS 			"Heat Set GR [%.1f °C]"   		<thermostat>    (Heating) 				{ zwave="7:command=thermostat_setpoint,setpoint_type=1,setpoint_scale=0" }
+
+/* Sonos */
+String currenttrackLR  "CurrentTrack LR [%s]"  (Sonos)   {sonos="[lr:currenttrack]", autoupdate="true"}
+String currenttrackBR  "CurrentTrack BR [%s]"  (Sonos)   {sonos="[br:currenttrack]", autoupdate="false"}
+
 
 
 
