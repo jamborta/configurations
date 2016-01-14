@@ -3,26 +3,26 @@ sitemap default label="Elizabeth House"
 	Frame label="Rooms"{
 		Text item=Living_Room label="Living Room" icon="groundfloor" {
 			Switch item=Livingroom_Moods label="Moods" mappings=[0="Bright", 1="Green", 2="Relax"]
-			Switch item=Light_LR_All_White  
-			Switch item=Light_LR_All_Color  
-			Switch item=Light_LR_Bulb1     
-			Slider item=Light_LR_Bulb1_BR   
-			Slider item=Light_LR_Bulb1_CT   
-			Switch item=Light_LR_Bulb2      
-			Slider item=Light_LR_Bulb2_BR    
-			Slider item=Light_LR_Bulb2_CT   
-			Switch item=Light_LR_Bulb3    
-			Slider item=Light_LR_Bulb3_BR    
-			Colorpicker  item=Light_LR_Bulb3_CT    
-			Switch  item=Light_LR_Bulb3_W      
-			Switch item=Light_LR_Bulb4   
-			Slider item=Light_LR_Bulb4_BR   
-			Colorpicker item=Light_LR_Bulb4_CT   
-			Switch item=Light_LR_Bulb4_W       
-			Slider item=Light_LR_Kitchen_D 
-			Switch item=Light_LR_Kitchen	
-			Slider item=Light_LR_Bar_D 		
-			Switch item=Light_LR_Bar		
+//			Switch item=Light_LR_All_White  
+//			Switch item=Light_LR_All_Color  
+//			Switch item=Light_LR_Bulb1     
+//			Slider item=Light_LR_Bulb1_BR   
+//			Slider item=Light_LR_Bulb1_CT   
+//			Switch item=Light_LR_Bulb2      
+//			Slider item=Light_LR_Bulb2_BR    
+//			Slider item=Light_LR_Bulb2_CT   
+//			Switch item=Light_LR_Bulb3    
+//			Slider item=Light_LR_Bulb3_BR    
+//			Colorpicker  item=Light_LR_Bulb3_CT    
+//			Switch  item=Light_LR_Bulb3_W      
+//			Switch item=Light_LR_Bulb4   
+//			Slider item=Light_LR_Bulb4_BR   
+//			Colorpicker item=Light_LR_Bulb4_CT   
+//			Switch item=Light_LR_Bulb4_W       
+//			Slider item=Light_LR_Kitchen_D 
+//			Switch item=Light_LR_Kitchen	
+//			Slider item=Light_LR_Bar_D 		
+//			Switch item=Light_LR_Bar		
 		}
 		Text item=Bedroom label="Bedroom" icon="bedroom" {
 			Switch item=Bedroom_Moods label="Moods" mappings=[0="Mood1", 1="Mood2", 2="Mood3"]
