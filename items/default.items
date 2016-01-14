@@ -22,8 +22,8 @@ Group:Switch:OR(ON, OFF) 		Lights_BR		"BR Lights [(%d)]"    (All)
 Switch Light_LR_All_White   "All White"         (Ligths_Control)          	{milight="bridge1;0"}
 Switch Light_LR_All_Color   "All Color"         (Ligths_Control)           	{milight="bridge1;6"}  
 Switch Light_LR_Bulb1       "Bulb 1"            (Ligths_Control, Lights_LR) {milight="bridge1;1"}
-Dimmer Light_LR_Bulb1_BR    "Bulb 1 Brightness" (Ligths_Control)         	{milight="bridge1;1;brightness"}
-Dimmer Light_LR_Bulb1_CT    "Bulb 1 Color"      (Ligths_Control)         	{milight="bridge1;1;colorTemperature"} 
+Dimmer Light_LR_Bulb1_BR    "Bulb 1 Brightness [%s]" (Ligths_Control)         	{milight="bridge1;1;brightness"}
+Dimmer Light_LR_Bulb1_CT    "Bulb 1 Color [%s]"      (Ligths_Control)         	{milight="bridge1;1;colorTemperature"} 
 Switch Light_LR_Bulb2       "Bulb 2"            (Ligths_Control, Lights_LR)	{milight="bridge1;2"}
 Dimmer Light_LR_Bulb2_BR    "Bulb 2 Brightness" (Ligths_Control)         	{milight="bridge1;2;brightness"}
 Dimmer Light_LR_Bulb2_CT    "Bulb 2 Color"      (Ligths_Control)         	{milight="bridge1;2;colorTemperature"} 
