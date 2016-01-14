@@ -1,6 +1,6 @@
 sitemap default label="Elizabeth House"
 {
-	Frame {
+	Frame label="Rooms"{
 		Text item=Living_Room label="Living Room" icon="groundfloor" {
 			Switch item=Livingroom_Moods label="Moods" mappings=[0="Bright", 1="Green", 2="Relax"]
 			Switch item=Light_LR_All_White  
