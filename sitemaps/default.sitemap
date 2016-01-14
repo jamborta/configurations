@@ -1,7 +1,7 @@
 sitemap default label="Elizabeth House"
 {
 	Frame {
-		Group item=Living_Room label="Living Room" icon="groundfloor" {
+		Text item=Living_Room label="Living Room" icon="groundfloor" {
 			Switch item=Livingroom_Moods label="Moods" mappings=[0="Bright", 1="Green", 2="Relax"]
 			Switch item=Light_LR_All_White  
 			Switch item=Light_LR_All_Color  
@@ -24,7 +24,7 @@ sitemap default label="Elizabeth House"
 			Slider item=Light_LR_Bar_D 		
 			Switch item=Light_LR_Bar		
 		}
-		Group item=Bedroom label="Bedroom" icon="bedroom" {
+		Text item=Bedroom label="Bedroom" icon="bedroom" {
 			Switch item=Bedroom_Moods label="Moods" mappings=[0="Mood1", 1="Mood2", 2="Mood3"]
 			Switch item=Light_LR_Bulb5      
 			Slider item=Light_LR_Bulb5_BR   
