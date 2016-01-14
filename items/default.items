@@ -43,11 +43,11 @@ Switch  Light_LR_Bar		"Kitchen Switch2" 			(Ligths_Control, Lights_LR) 	{ lightw
 
 /* Bedroom lights */
 Switch Light_LR_Bulb5       "Tamas' Light 1"            (Ligths_Control_Bedroom, Lights_BR)	{milight="bridge1;9"}  
-Dimmer Light_LR_Bulb5_BR    "Tamas' Light Brightness" 	(Ligths_Control_Bedroom)         	{milight="bridge1;9;brightness"}
+Dimmer Light_LR_Bulb5_BR    "Tamas' Light Brightness [%s]" 	(Ligths_Control_Bedroom)         	{milight="bridge1;9;brightness"}
 Color  Light_LR_Bulb5_CT    "Tamas' Light Color"      	(Ligths_Control_Bedroom)         	{milight="bridge1;9;rgb"}           
 Switch Light_LR_Bulb5_W     "Tamas' Light White"      	(Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;9;whiteMode"}           
 Switch Light_LR_Bulb6       "Jju's Light"           	(Ligths_Control_Bedroom, Lights_BR) {milight="bridge1;10"}  
-Dimmer Light_LR_Bulb6_BR    "Jju's Light Brightness" 	(Ligths_Control_Bedroom)      	    {milight="bridge1;10;brightness"}
+Dimmer Light_LR_Bulb6_BR    "Jju's Light Brightness [%s]" 	(Ligths_Control_Bedroom)      	    {milight="bridge1;10;brightness"}
 Color  Light_LR_Bulb6_CT    "Jju's Light Color"      	(Ligths_Control_Bedroom)         	{milight="bridge1;10;rgb"}           
 Switch Light_LR_Bulb6_W     "Jju's Light White"      	(Ligths_Control_Bedroom)         	{autoupdate="false", milight="bridge1;10;whiteMode"}        
 

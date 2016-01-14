@@ -27,12 +27,12 @@ sitemap default label="Elizabeth House"
 		Text item=Bedroom label="Bedroom" icon="bedroom" {
 			Switch item=Bedroom_Moods label="Moods" mappings=[0="Mood1", 1="Mood2", 2="Mood3"]
 			Switch item=Light_LR_Bulb5      
-//			Slider item=Light_LR_Bulb5_BR   
-//			Colorpicker item=Light_LR_Bulb5_CT         
+			Slider item=Light_LR_Bulb5_BR   
+			Colorpicker item=Light_LR_Bulb5_CT         
 			Switch item=Light_LR_Bulb5_W    
 			Switch item=Light_LR_Bulb6        
-//			Slider item=Light_LR_Bulb6_BR  
-//			Colorpicker item=Light_LR_Bulb6_CT              
+			Slider item=Light_LR_Bulb6_BR  
+			Colorpicker item=Light_LR_Bulb6_CT              
 			Switch item=Light_LR_Bulb6_W      
 		}
 		Switch item=Lights_LR mappings=[OFF="All Off", ON="All On"]		
