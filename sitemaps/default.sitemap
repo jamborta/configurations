@@ -6,8 +6,8 @@ sitemap default label="Elizabeth House"
 			Switch item=Light_LR_All_White  
 			Switch item=Light_LR_All_Color  
 			Switch item=Light_LR_Bulb1     
-//			Slider item=Light_LR_Bulb1_BR   
-//			Slider item=Light_LR_Bulb1_CT   
+			Slider item=Light_LR_Bulb1_BR label="Light_LR_Bulb1_BR [%s]"
+			Slider item=Light_LR_Bulb1_CT label="Light_LR_Bulb1_CT [%s]"
 			Switch item=Light_LR_Bulb2      
 //			Slider item=Light_LR_Bulb2_BR    
 //			Slider item=Light_LR_Bulb2_CT   
