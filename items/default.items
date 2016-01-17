@@ -117,7 +117,6 @@ Group Energy_Today_Group		(Energy)
 Group Energy_Current_Group		(Energy)
 Number Energy_Yesterday			"Energy usage yesterday [%.1f W]"   (Energy) 				{ lightwaverf="serial=9470FE,type=ENERGY_YESTERDAY_USAGE" }
 Number Energy_Today				"Energy usage today [%.1f W]"       (Energy_Today_Group) 	{ lightwaverf="serial=9470FE,type=ENERGY_TODAY_USAGE" }
-Number Energy_Max				"Energy max usage [%.1f W]"      	(Energy) 				{ lightwaverf="serial=9470FE,type=ENERGY_MAX_USAGE" }
 Number Energy_Current			"Energy usage current [%.1f W]"     (Energy_Current_Group) 	{ lightwaverf="serial=9470FE,type=ENERGY_CURRENT_USAGE" }
 Number Energy_Current_Period	"Chart Period"
 Number Energy_Cum_Period    	"Chart Period"
