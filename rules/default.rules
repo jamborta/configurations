@@ -431,7 +431,7 @@ rule "Heater Timer Update"
         		BR_Heating.sendCommand(Heating_On_Off.state.toString)
         	}
         	if (Timer_GR.state == ON){
-        		BR_Heating.sendCommand(Heating_On_Off.state.toString)
+        		GR_Heating.sendCommand(Heating_On_Off.state.toString)
         	}
             Timer_Switch.sendCommand(OFF)
         ]
