@@ -170,7 +170,7 @@ sitemap default label="Elizabeth House"
 		Text item=Heat_Timer {
 			Switch item=Timer_Switch
 			Switch item=Heating_On_Off
-			Setpoint item=Timer_Mins minValue=0 maxValue=600 step=5
+			Setpoint item=Timer_Mins label="Target [%.1f C]" step=15 minValue=15 maxValue=600
 		}
 	}		
 	
