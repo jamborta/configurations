@@ -6,8 +6,8 @@ import org.joda.time.*
 import org.openhab.model.script.actions.Timer
 
 var Number counter = 1
-var Timer tIndoorLightsFirst
-var Timer tIndoorLightsSecond
+var Timer heaterTimer = null
+
 
 /**
  * This is a demo rule which simulates a real dimmer by reacting to increase/decrease commands 
@@ -409,7 +409,20 @@ then
     Temp_combined.postUpdate(Sensor_AA.state.format("%.1f") + " °C/ " + Sensor_AB.state.format("%.1f") + " °C/ " + Sensor_AC.state.format("%.1f") + " °C")
 end
 
-
+rule "Heater Timer Update"
+    when
+        Item Timer_Switch changed to ON
+    then
+        var int minutes = (Timer_Mins.state as DecimalType).intValue()
+        
+        if (heaterTimer != null)
+            heaterTimer.cancel()
+        
+        var DateTime alarmTime = now.plusMinutes(minutes)
+        
+        heaterTimer = createTimer(alarmTime) [|             
+                ALL_Heating.sendCommand(Heating_On_Off.state as StringType)
+        ]
 
 /** 
  * shows how to check recent switch states - very helpful to avoid executing something too often, just
