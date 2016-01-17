@@ -411,7 +411,7 @@ end
 
 rule "Heater Timer Update"
     when
-        Item Timer_Switch changed to ON
+        Item Timer_Switch received command ON
     then
         var int minutes = (Timer_Mins.state as DecimalType).intValue()
         val String heatingState = Heating_On_Off.toString
