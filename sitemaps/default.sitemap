@@ -27,10 +27,8 @@ sitemap default label="Elizabeth House"
 		Text item=Bedroom label="Bedroom" icon="bedroom" {
 			Switch item=Bedroom_Moods label="Moods" mappings=[0="Mood1", 1="Mood2", 2="Mood3"]
 			Switch item=Light_LR_Bulb5     
-			Frame{ 
 			Slider item=Light_LR_Bulb5_BR   
 			Colorpicker item=Light_LR_Bulb5_CT         
-			}
 			Switch item=Light_LR_Bulb5_W    
 			Switch item=Light_LR_Bulb6        
 			Slider item=Light_LR_Bulb6_BR  
@@ -71,11 +69,13 @@ sitemap default label="Elizabeth House"
 				Text item=Sensor_AB valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Sensor_AC valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Sensor_AD valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
-				Text item=Node_2_Hum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
-				Text item=Node_2_Lum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
-				Text item=Node_2_Temp valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
-				Text item=Node_2_UV valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
-				Text item=Node_2_Motion 
+				Frame label="Living Room Zwave" {
+					Text item=Node_2_Hum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+					Text item=Node_2_Lum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+					Text item=Node_2_Temp valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+					Text item=Node_2_UV valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+					Text item=Node_2_Motion 
+				}
 				Text item=Node_3_Hum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_3_Lum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_3_Temp valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
