@@ -152,7 +152,10 @@ Switch NextLR          "Next track"     	  (Sonos)   {sonos="[ON:lr:next]"}
 /* Time */
 String Heat_Timer "Timer"
 Switch Timer_Switch "Timer On"
-Switch Heating_On_Off "Heating State To Do"
+Switch Heating_On_Off "Turn heating on/off"
+Switch Timer_LR "Living Room"
+Switch Timer_BR "Bedroom"
+Switch Timer_GR "Guest room"
 Number Timer_Mins
 
 

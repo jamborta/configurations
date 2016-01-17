@@ -417,16 +417,25 @@ rule "Heater Timer Update"
         val String heatingState = Heating_On_Off.state.toString
         
         logInfo("Heating Timer", "Setting a timer to turn the heating " + heatingState + " in " + minutes + " minutes")
-        
+                
         if (heaterTimer != null)
             heaterTimer.cancel()
         
         var DateTime alarmTime = now.plusMinutes(minutes)
         
         heaterTimer = createTimer(alarmTime) [|             
-                ALL_Heating.sendCommand(heatingState)
-                Timer_Switch.sendCommand(OFF)
+        	if (Timer_LR.state == ON){
+        		LR_Heating.sendCommand(Heating_On_Off.state.toString)
+        	}
+        	if (Timer_BR.state == ON){
+        		BR_Heating.sendCommand(Heating_On_Off.state.toString)
+        	}
+        	if (Timer_GR.state == ON){
+        		BR_Heating.sendCommand(Heating_On_Off.state.toString)
+        	}
+            Timer_Switch.sendCommand(OFF)
         ]
+	end
 
 /** 
  * shows how to check recent switch states - very helpful to avoid executing something too often, just
