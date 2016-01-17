@@ -409,6 +409,15 @@ then
     Temp_combined.postUpdate(Sensor_AA.state.format("%.1f") + " °C/ " + Sensor_AB.state.format("%.1f") + " °C/ " + Sensor_AC.state.format("%.1f") + " °C")
 end
 
+rule "Initialise Heating Time"
+    when 
+        System started
+    then
+    	if (Timer_Mins == Uninitialized) {
+    		Timer_Mins.sendCommand(15)
+    	}        
+	end
+
 rule "Heater Timer Update"
     when
         Item Timer_Switch received command ON
