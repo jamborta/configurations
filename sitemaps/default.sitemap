@@ -42,8 +42,8 @@ sitemap default label="Elizabeth House"
 	Frame label="Energy" {
 		Text item=Energy_Current {
 			Frame {
+				Text item=Energy_Current
 				Text item=Energy_Today
-				Text item=Energy_Max
 				Text item=Energy_Yesterday
 			}
 			Frame {
