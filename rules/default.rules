@@ -414,6 +414,9 @@ rule "Heater Timer Update"
         Item Timer_Switch changed to ON
     then
         var int minutes = (Timer_Mins.state as DecimalType).intValue()
+        val String heatingState = Heating_On_Off.toString
+        
+        logInfo("Heating Timer", "Setting a timer to turn the heating " + heatingState + " in " + minutes + " minutes")
         
         if (heaterTimer != null)
             heaterTimer.cancel()
@@ -421,7 +424,7 @@ rule "Heater Timer Update"
         var DateTime alarmTime = now.plusMinutes(minutes)
         
         heaterTimer = createTimer(alarmTime) [|             
-                ALL_Heating.sendCommand(Heating_On_Off.state as StringType)
+                ALL_Heating.sendCommand(heatingState)
         ]
 
 /** 
