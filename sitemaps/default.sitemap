@@ -110,7 +110,7 @@ sitemap default label="Elizabeth House"
 				Text item=Sensor_LastUpdate_AC visibility=[Sensor_LastUpdate_AC>1400] valuecolor=[Sensor_LastUpdate_AC>1700="orange", Sensor_LastUpdate_AC>2000="red"]
 				Text item=Sensor_LastUpdate_AD visibility=[Sensor_LastUpdate_AD>1400] valuecolor=[Sensor_LastUpdate_AD>1700="orange", Sensor_LastUpdate_AD>2000="red"]				
 			}
-			Frame {
+			Frame label="Temp sensor charts" {
 				Switch item=Sensor_Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
 				Chart item=Sensor_Chart period=h refresh=6000 visibility=[Sensor_Chart_Period==0, Sensor_Chart_Period=="Uninitialized"]
 				Chart item=Sensor_Chart period=D refresh=30000 visibility=[Sensor_Chart_Period==1]
