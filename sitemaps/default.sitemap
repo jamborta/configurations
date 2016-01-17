@@ -91,6 +91,12 @@ sitemap default label="Elizabeth House"
 				Chart item=Sensor_Chart period=D refresh=30000 visibility=[Sensor_Chart_Period==1]
 				Chart item=Sensor_Chart period=W refresh=30000 visibility=[Sensor_Chart_Period==2]
 			}
+			Frame {
+				Switch item=Sensor_Chart_Zwave_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+				Chart item=Sensor_Chart_Zwave period=h refresh=6000 visibility=[Sensor_Chart_Period==0, Sensor_Chart_Period=="Uninitialized"]
+				Chart item=Sensor_Chart_Zwave period=D refresh=30000 visibility=[Sensor_Chart_Period==1]
+				Chart item=Sensor_Chart_Zwave period=W refresh=30000 visibility=[Sensor_Chart_Period==2]
+			}
 		}
 		
 		
