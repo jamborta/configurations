@@ -7,7 +7,7 @@ Group Sensors		(All)
 Group Switches		(All)
 Group Heating		(All)
 Group Battery		(All)
-Group Sonos			(All)
+Group Sonos <video>	(All) 
 
 Group Ligths_Control 			"Lights Control" 	<video> 	(Living_Room)
 Group Ligths_Control_Bedroom 	"Lights Control" 	<video> 	(Bedroom)
