@@ -117,9 +117,9 @@ DateTime LR_Motion_On_LastUpdate 	"Last Update (Living Room Motion) [%1$ta %1$tR
 /* Energy measurements */
 Group Energy_Today_Group		(Energy)
 Group Energy_Current_Group		(Energy)
-Number Energy_Yesterday			"Energy usage yesterday [%.1f W]"   (Energy) 				{ lightwaverf="serial=9470FE,type=ENERGY_YESTERDAY_USAGE" }
-Number Energy_Today				"Energy usage today [%.1f W]"       (Energy_Today_Group) 	{ lightwaverf="serial=9470FE,type=ENERGY_TODAY_USAGE" }
-Number Energy_Current			"Energy usage current [%.1f W]"     (Energy_Current_Group) 	{ lightwaverf="serial=9470FE,type=ENERGY_CURRENT_USAGE" }
+Number Energy_Yesterday			"Energy usage yesterday [%.1f W]"   <energy> (Energy) 				{ lightwaverf="serial=9470FE,type=ENERGY_YESTERDAY_USAGE" }
+Number Energy_Today				"Energy usage today [%.1f W]"       <energy> (Energy_Today_Group) 	{ lightwaverf="serial=9470FE,type=ENERGY_TODAY_USAGE" }
+Number Energy_Current			"Energy usage current [%.1f W]"     <energy> (Energy_Current_Group) 	{ lightwaverf="serial=9470FE,type=ENERGY_CURRENT_USAGE" }
 Number Energy_Current_Period	"Chart Period"
 Number Energy_Cum_Period    	"Chart Period"
 
