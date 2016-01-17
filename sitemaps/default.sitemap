@@ -168,12 +168,16 @@ sitemap default label="Elizabeth House"
 		Setpoint item=LR_Radiator_Door_HS step=0.5 minValue=18 maxValue=30
 		Setpoint item=GR_Radiator_HS step=0.5 minValue=18 maxValue=30	
 		Text item=Heat_Timer {
-			Switch item=Timer_Switch
-			Switch item=Heating_On_Off
-			Switch item=Timer_LR
-			Switch item=Timer_BR
-			Switch item=Timer_GR
-			Setpoint item=Timer_Mins label="Target [%d mins]" step=1 minValue=1 maxValue=600
+			Frame {
+				Switch item=Timer_Switch
+				Switch item=Heating_On_Off
+				Setpoint item=Timer_Mins label="Target [%d mins]" step=1 minValue=1 maxValue=600
+			}
+			Frame {
+				Switch item=Timer_LR
+				Switch item=Timer_BR
+				Switch item=Timer_GR
+			}
 		}
 	}		
 	
