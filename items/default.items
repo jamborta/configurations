@@ -149,6 +149,12 @@ String currenttrackLR  "LR: [%s]"  			  (Sonos)   {sonos="[lr:currenttrack]", au
 Switch PlayLR          "Play/Pause LR"        (Sonos)   {sonos="[ON:lr:play],[OFF:lr:pause]"}
 Switch NextLR          "Next track"     	  (Sonos)   {sonos="[ON:lr:next]"}
 
+/* Time */
+String Heat_Timer "Timer"
+Switch Timer_Switch "Timer On"
+Switch Heating_On_Off "Heating State To Do"
+
+
 
 
 
