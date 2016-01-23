@@ -92,7 +92,7 @@ Switch Bathroom_Vent            "Bathroom Ventilation"                  <light> 
 /* Sensors */
 Group Zwave_Sensors				(Sensors)
 Group Sensor_Chart_Zwave
-Number  Node_2_Temp     		"Living Room Temperature [%.1f °C]"       <temperature>	(Zwave_Sensors, Sensor_Chart_Zwave)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
+Number  Node_2_Temp     		"Living Room Temperature [%.1f °C]"      <temperature>	(Zwave_Sensors, Sensor_Chart_Zwave)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
 Number  Node_2_Hum     			"Living Room Humidity [%.1f]"          	 <temperature>  (Zwave_Sensors)	  { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=5" }
 Number  Node_2_UV     			"Living Room UV [%.1f]"        			 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=27" }
 Number  Node_2_Lum     			"Living Room Luminance [%.1f]"        	 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
@@ -152,11 +152,16 @@ Switch NextLR          "Next track"     	  (Sonos)   {sonos="[ON:lr:next]"}
 /* Time */
 String Heat_Timer "Timer"
 Switch Timer_Switch "Timer On"
-Switch Heating_On_Off "Turn heating on/off"
+Switch Heating_On_Off "Turn heating OFF/ON"
 Switch Timer_LR "Living Room"
 Switch Timer_BR "Bedroom"
 Switch Timer_GR "Guest room"
 Number Timer_Mins
+
+Group Sensor_Chart_Test
+Number Sensor_Chart_Test_Period		"Derivative Sensor Chart Period"
+Number Bedroom_Change "Bedroom change" <temperature> (Sensor_Chart_Test)
+Number Livingroom_Change "Living Room change" <temperature> (Sensor_Chart_Test)
 
 
 

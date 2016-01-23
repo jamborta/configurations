@@ -217,6 +217,21 @@ then
 	logInfo("Weather", "Temperature evolved of " + Weather_Temperature.deltaSince(now.minusMinutes(2)) + " degrees.")
 end
 
+rule "Turn off heating if temperature stabilises"
+when
+	Time cron "0 * * * * ?"
+then
+	if(BR_Heating.state == ON){
+		val tempChangeBR = Node_3_Temp.deltaSince(now.minusMinutes(30))
+		postUpdate(Bedroom_Change, tempChangeBR)
+	} 
+	if(LR_Heating.state == ON){
+		val tempChangeLR = Node_2_Temp.deltaSince(now.minusMinutes(30))
+		postUpdate(Livingroom_Change, tempChangeLR)
+	}
+end
+
+
 /** shows how to use sensor values from the past */
 rule "Persistence Demo"
 when

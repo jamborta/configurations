@@ -118,10 +118,19 @@ sitemap default label="Elizabeth House"
 			}
 			Frame {
 				Switch item=Sensor_Chart_Zwave_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
-				Chart item=Sensor_Chart_Zwave period=h refresh=6000 visibility=[Sensor_Chart_Period==0, Sensor_Chart_Period=="Uninitialized"]
-				Chart item=Sensor_Chart_Zwave period=D refresh=30000 visibility=[Sensor_Chart_Period==1]
-				Chart item=Sensor_Chart_Zwave period=W refresh=30000 visibility=[Sensor_Chart_Period==2]
+				Chart item=Sensor_Chart_Zwave period=h refresh=6000 visibility=[Sensor_Chart_Zwave_Period==0, Sensor_Chart_Zwave_Period=="Uninitialized"]
+				Chart item=Sensor_Chart_Zwave period=D refresh=30000 visibility=[Sensor_Chart_Zwave_Period==1]
+				Chart item=Sensor_Chart_Zwave period=W refresh=30000 visibility=[Sensor_Chart_Zwave_Period==2]
 			}
+			Frame {
+				Text item=Bedroom_Change
+				Text item=Livingroom_Change
+				Switch item=Sensor_Chart_Test_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+				Chart item=Sensor_Chart_Test period=h refresh=6000 visibility=[Sensor_Chart_Test_Period==0, Sensor_Chart_Test_Period=="Uninitialized"]
+				Chart item=Sensor_Chart_Test period=D refresh=30000 visibility=[Sensor_Chart_Test_Period==1]
+				Chart item=Sensor_Chart_Test period=W refresh=30000 visibility=[Sensor_Chart_Test_Period==2]
+			}
+			
 		}
 		
 		
