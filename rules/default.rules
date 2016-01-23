@@ -219,7 +219,7 @@ end
 
 rule "Turn off heating if temperature stabilises"
 when
-	Time cron "0 15 * * * ?"
+	Time cron "0 */15 * * * ?"
 then
 	if(BR_Heating.state == ON){
 		val tempChangeBR = Node_3_Temp.deltaSince(now.minusMinutes(15))
