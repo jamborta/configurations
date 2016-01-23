@@ -219,15 +219,15 @@ end
 
 rule "Turn off heating if temperature stabilises"
 when
-	Time cron "0 * * * * ?"
+	Time cron "0 15 * * * ?"
 then
 	if(BR_Heating.state == ON){
-		val tempChangeBR = Node_3_Temp.deltaSince(now.minusMinutes(30))
+		val tempChangeBR = Node_3_Temp.deltaSince(now.minusMinutes(15))
 		logInfo("Heating", "Temperature in BR evolved of " + tempChangeBR + " degrees.")
 		postUpdate(Bedroom_Change, tempChangeBR)
 	} 
 	if(LR_Heating.state == ON){
-		val tempChangeLR = Node_2_Temp.deltaSince(now.minusMinutes(30))
+		val tempChangeLR = Node_2_Temp.deltaSince(now.minusMinutes(15))
 		logInfo("Heating", "Temperature in LR evolved of " + tempChangeLR + " degrees.")
 		postUpdate(Livingroom_Change, tempChangeLR)
 	}
