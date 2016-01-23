@@ -160,8 +160,8 @@ Number Timer_Mins
 
 Group Sensor_Chart_Test
 Number Sensor_Chart_Test_Period		"Derivative Sensor Chart Period"
-Number Bedroom_Change "Bedroom change" <temperature> (Sensor_Chart_Test)
-Number Livingroom_Change "Living Room change" <temperature> (Sensor_Chart_Test)
+Number Bedroom_Change "Bedroom change [%.1f °C]" <temperature> (Sensor_Chart_Test)
+Number Livingroom_Change "Living Room change [%.1f °C]" <temperature> (Sensor_Chart_Test)
 
 
 
