@@ -24,4 +24,5 @@ Items {
 	Sensor_Chart* : strategy = everyChange, restoreOnStartup
 	Zwave_Sensors* : strategy = everyChange, restoreOnStartup
 	Battery* : strategy = everyChange, restoreOnStartup
+	Sensor_Chart_Test* : strategy = everyChange, restoreOnStartup
 }
