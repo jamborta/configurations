@@ -12,6 +12,6 @@ Items {
 	Energy_Today, Energy_Current, Energy_Max : strategy = everyChange, everyMinute, restoreOnStartup
 	Sensor_AA, Sensor_AB, Sensor_AC, Sensor_AD : strategy = everyChange, everyMinute, restoreOnStartup
 	Zwave_Sensors* : strategy = everyChange, everyMinute, restoreOnStartup	
-	Timer_Mins: strategy = everyChange, restoreOnStartup
-	Sensor_Chart_Test* : strategy = everyChange, restoreOnStartup
+	Timer_Mins: strategy = everyChange, everyMinute, restoreOnStartup
+	Sensor_Chart_Test* : strategy = everyChange, everyMinute, restoreOnStartup
 }
