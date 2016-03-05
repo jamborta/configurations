@@ -433,9 +433,10 @@ rule "Heater Timer Update"
         var int minutes = (Timer_Mins.state as DecimalType).intValue()
         val String heatingState = Heating_On_Off.state.toString
         
-        if (Timer_GR.state == Uninitialized)   {      
-        	sendBroadcastNotification("One of the switched are uninitialized")
+        if (Heating_On_Off.state == Uninitialized)   {      
+        	sendBroadcastNotification("Turn heating OFF/ON switch is uninitialized")
         }
+        
         logInfo("Heating Timer", "Setting a timer to turn the heating " + heatingState + " in " + minutes + " minutes")
         logInfo("Heating Timer", "Living room switch state " + Timer_LR.state.toString)
         logInfo("Heating Timer", "Bedroom switch state " + Timer_BR.state.toString)
