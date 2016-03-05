@@ -433,7 +433,7 @@ rule "Heater Timer Update"
         var int minutes = (Timer_Mins.state as DecimalType).intValue()
         val String heatingState = Heating_On_Off.state.toString
         
-        notifyMyAndroid("dafas", "adfafdfa")
+        sendBroadcastNotification("your text here")
         
         logInfo("Heating Timer", "Setting a timer to turn the heating " + heatingState + " in " + minutes + " minutes")
         logInfo("Heating Timer", "Living room switch state " + Timer_LR.state.toString)
