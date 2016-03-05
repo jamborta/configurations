@@ -435,30 +435,31 @@ rule "Heater Timer Update"
         
         if (Heating_On_Off.state == Uninitialized)   {      
         	sendBroadcastNotification("Turn heating OFF/ON switch is uninitialized")
+        } else {
+        
+	        logInfo("Heating Timer", "Setting a timer to turn the heating " + heatingState + " in " + minutes + " minutes")
+	        logInfo("Heating Timer", "Living room switch state " + Timer_LR.state.toString)
+	        logInfo("Heating Timer", "Bedroom switch state " + Timer_BR.state.toString)
+	        logInfo("Heating Timer", "Guest room switch state " + Timer_GR.state.toString)        
+	                
+	        if (heaterTimer != null)
+	            heaterTimer.cancel()
+	        
+	        var DateTime alarmTime = now.plusMinutes(minutes)
+	        
+	        heaterTimer = createTimer(alarmTime) [|             
+	        	if (Timer_LR.state == ON){
+	        		LR_Heating.sendCommand(Heating_On_Off.state.toString)
+	        	}
+	        	if (Timer_BR.state == ON){
+	        		BR_Heating.sendCommand(Heating_On_Off.state.toString)
+	        	}
+	        	if (Timer_GR.state == ON){
+	        		GR_Heating.sendCommand(Heating_On_Off.state.toString)
+	        	}
+	            Timer_Switch.sendCommand(OFF)
+	        ]
         }
-        
-        logInfo("Heating Timer", "Setting a timer to turn the heating " + heatingState + " in " + minutes + " minutes")
-        logInfo("Heating Timer", "Living room switch state " + Timer_LR.state.toString)
-        logInfo("Heating Timer", "Bedroom switch state " + Timer_BR.state.toString)
-        logInfo("Heating Timer", "Guest room switch state " + Timer_GR.state.toString)        
-                
-        if (heaterTimer != null)
-            heaterTimer.cancel()
-        
-        var DateTime alarmTime = now.plusMinutes(minutes)
-        
-        heaterTimer = createTimer(alarmTime) [|             
-        	if (Timer_LR.state == ON){
-        		LR_Heating.sendCommand(Heating_On_Off.state.toString)
-        	}
-        	if (Timer_BR.state == ON){
-        		BR_Heating.sendCommand(Heating_On_Off.state.toString)
-        	}
-        	if (Timer_GR.state == ON){
-        		GR_Heating.sendCommand(Heating_On_Off.state.toString)
-        	}
-            Timer_Switch.sendCommand(OFF)
-        ]
 	end
 
 /** 
