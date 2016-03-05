@@ -434,6 +434,9 @@ rule "Heater Timer Update"
         val String heatingState = Heating_On_Off.state.toString
         
         logInfo("Heating Timer", "Setting a timer to turn the heating " + heatingState + " in " + minutes + " minutes")
+        logInfo("Heating Timer", "Living room switch state " + Timer_LR.state.toString)
+        logInfo("Heating Timer", "Bedroom switch state " + Timer_BR.state.toString)
+        logInfo("Heating Timer", "Guest room switch state " + Timer_GR.state.toString)        
                 
         if (heaterTimer != null)
             heaterTimer.cancel()
