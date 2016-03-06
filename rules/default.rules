@@ -540,7 +540,7 @@ then
 	}
 	
 	var String item = null
-	if (command.contains("lights")) {
+	if (command.contains("lights") || command.contains("light")) {
 		item = 'Lights'
 	}
 	
