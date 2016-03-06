@@ -539,8 +539,13 @@ then
 		room = "LR"
 	}
 	
+	var String item = null
+	if (command.contains("lights")) {
+		item = 'Lights'
+	}
+	
 	if (newState != null && room != null){
-		sendCommand("Lights_"+room, newState.toString)
+		sendCommand(item+"_"+room, newState.toString)
 	}
 	
 end
