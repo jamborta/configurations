@@ -4,6 +4,7 @@ import org.openhab.model.script.actions.*
 import java.lang.Double
 import org.joda.time.*
 import org.openhab.model.script.actions.Timer
+import org.openhab.core.types.*
 
 var Number counter = 1
 var Timer heaterTimer = null
@@ -526,6 +527,22 @@ when
 then
 	var String command = VoiceCommand.state.toString.toLowerCase
 	logInfo("Voice.Rec","VoiceCommand received "+command)
+	var State newState = null
+	if (command.contains("off")) {
+		newState = OFF
+	} else if (command.contains("on")) {
+		newState = ON
+	}
+	
+	var String room = null
+	if (command.contains("living room")) {
+		room = "LR"
+	}
+	
+	if (newState != null && room != null){
+		sendCommand("Lights_"+room, newState.toString)
+	}
+	
 end
 
 
