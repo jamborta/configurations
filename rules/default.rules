@@ -519,3 +519,15 @@ then
 	var Number humidex = T + (new Double(5) / new Double(9)) * (e - 10)
 	postUpdate(Weather_Humidex, humidex)
 end
+
+rule "Voice command test"
+when
+    Item VoiceCommand received command
+then
+	var String command = VoiceCommand.state.toString.toLowerCase
+	logInfo("Voice.Rec","VoiceCommand received "+command)
+end
+
+
+
+
