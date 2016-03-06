@@ -537,6 +537,8 @@ then
 	var String room = null
 	if (command.contains("living room")) {
 		room = "LR"
+	} else if (command.contains("bedroom")) {
+		room = "BR"
 	}
 	
 	var String item = null
