@@ -104,6 +104,20 @@ sitemap default label="Elizabeth House"
 				Text item=Node_3_UV valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_3_Motion
 			}
+			Frame label="Guest Room"{ 
+				Text item=Node_9_Hum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Node_9_Lum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Node_9_Temp valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Node_9_UV valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Node_9_Motion
+			}
+			Frame label="Bathroom"{ 
+				Text item=Node_10_Hum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Node_10_Lum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Node_10_Temp valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Node_10_UV valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Node_10_Motion
+			}
 			Frame{
 				Text item=Sensor_LastUpdate_AA visibility=[Sensor_LastUpdate_AA>1400] valuecolor=[Sensor_LastUpdate_AA>1700="orange", Sensor_LastUpdate_AA>2000="red"]
 				Text item=Sensor_LastUpdate_AB visibility=[Sensor_LastUpdate_AB>1400] valuecolor=[Sensor_LastUpdate_AB>1700="orange", Sensor_LastUpdate_AB>2000="red"]
@@ -209,6 +223,8 @@ sitemap default label="Elizabeth House"
 		Text item=Sensor_AD_BT visibility=[Sensor_AD_BT<2.6]
 		Text item=Node_2_BT visibility=[Node_2_BT<10]
 		Text item=Node_3_BT	visibility=[Node_3_BT<10]
+		Text item=Node_9_BT	visibility=[Node_9_BT<10]
+		Text item=Node_10_BT visibility=[Node_10_BT<10]
 	}	
 	
 }
