@@ -121,6 +121,34 @@ then
 	Sensor.sendCommand("aADBATT-----")
 end
 
+rule "Zwave Update"
+when
+	Item Node_2_Temp received update
+then 
+	postUpdate(Node_2_Temp_LastUpdate, new DateTimeType())
+end
+
+rule "Zwave Update"
+when
+	Item Node_3_Temp received update
+then 
+	postUpdate(Node_3_Temp_LastUpdate, new DateTimeType())
+end
+
+rule "Zwave Update"
+when
+	Item Node_9_Temp received update
+then 
+	postUpdate(Node_9_Temp_LastUpdate, new DateTimeType())
+end
+
+rule "Zwave Update"
+when
+	Item Node_10_Temp received update
+then 
+	postUpdate(Node_10_Temp_LastUpdate, new DateTimeType())
+end
+
 rule "Temp Update"
 when
     Item Sensor received update
