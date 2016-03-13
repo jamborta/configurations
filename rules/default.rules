@@ -448,11 +448,11 @@ end
 
 rule "Temperature summary"
 when
-    Item Sensor_AA changed
-    or Item Sensor_AB changed
-    or Item Sensor_AC changed
+    Item Node_2_Temp changed
+    or Item Node_3_Temp changed
+    or Item Node_9_Temp changed
 then
-    Temp_combined.postUpdate(Sensor_AA.state.format("%.1f") + " °C/ " + Sensor_AB.state.format("%.1f") + " °C/ " + Sensor_AC.state.format("%.1f") + " °C")
+    Temp_combined.postUpdate(Node_3_Temp.state.format("%.1f") + " °C/ " + Node_2_Temp.state.format("%.1f") + " °C/ " + Node_9_Temp.state.format("%.1f") + " °C")
 end
 
 rule "Heater Timer Update"
