@@ -98,7 +98,7 @@ Number  Node_2_UV     			"Living Room UV [%.1f]"        			 <temperature>  (Zwav
 Number  Node_2_Lum     			"Living Room Luminance [%.1f]"        	 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
 Number  Node_2_BT     			"Living Room Battery [%.1f]"        	 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=BATTERY" }
 Contact Node_2_Motion     		"Living Room Motion [MAP(en.map):%s]"	 <temperature>  (Zwave_Sensors)   { zwave="2:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
-Contact Node_2_Tamper     		"Living Room Tamper [MAP(en.map):%s]"	 <temperature>  (Zwave_Sensors)    { zwave="2:0:command=SENSOR_BINARY,sensor_type=8,respond_to_basic=TRUE" }
+Contact Node_2_Tamper     		"Living Room Tamper [MAP(en.map):%s]"	 <temperature>  (Zwave_Sensors)    { zwave="2:0:command=SENSOR_ALARM,respond_to_basic=TRUE" }
 DateTime Node_2_Temp_LastUpdate	"Last Update (Living Room) [%1$ta %1$tR]"<clock>
 
 
@@ -108,7 +108,7 @@ Number  Node_3_UV     			"Bedroom UV [%.1f]"        			 	<temperature>  (Zwave_S
 Number  Node_3_Lum     			"Bedroom Luminance [%.1f]"        		<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
 Number  Node_3_BT     			"Bedroom Battery [%.1f]"            	<temperature>  (Zwave_Sensors)   { zwave="3:0:command=BATTERY" }
 Contact Node_3_Motion     		"Bedroom Motion [MAP(en.map):%s]"	 	<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
-Contact Node_3_Tamper     		"Bedroom Tamper [MAP(en.map):%s]"	 	<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_BINARY,sensor_type=8,respond_to_basic=TRUE" }
+Contact Node_3_Tamper     		"Bedroom Tamper [MAP(en.map):%s]"	 	<temperature>  (Zwave_Sensors)   { zwave="3:0:command=SENSOR_ALARM,respond_to_basic=TRUE" }
 DateTime Node_3_Temp_LastUpdate	"Last Update (Bedroom) [%1$ta %1$tR]"   <clock>
 
 Number  Node_9_Temp     		"Guest Room Temperature [%.1f °C]"       <temperature>  (Zwave_Sensors, Sensor_Chart_Zwave)   { zwave="9:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
@@ -117,7 +117,7 @@ Number  Node_9_UV     			"Guest Room UV [%.1f]"        			 <temperature>  (Zwave
 Number  Node_9_Lum     			"Guest Room Luminance [%.1f]"        	 <temperature>  (Zwave_Sensors)   { zwave="9:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
 Number  Node_9_BT     			"Guest Room Battery [%.1f]"            	 <temperature>  (Zwave_Sensors)   { zwave="9:0:command=BATTERY" }
 Contact Node_9_Motion     		"Guest Room Motion [MAP(en.map):%s]"	 <temperature>  (Zwave_Sensors)   { zwave="9:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
-Contact Node_9_Tamper     		"Guest Room Tamper [MAP(en.map):%s]"	 <temperature>  (Zwave_Sensors)   { zwave="9:0:command=SENSOR_BINARY,sensor_type=8,respond_to_basic=TRUE" }
+Contact Node_9_Tamper     		"Guest Room Tamper [MAP(en.map):%s]"	 <temperature>  (Zwave_Sensors)   { zwave="9:0:command=SENSOR_ALARM,respond_to_basic=TRUE" }
 DateTime Node_9_Temp_LastUpdate	"Last Update (Guest Room) [%1$ta %1$tR]" <clock>
 
 Number  Node_10_Temp     		"Bathroom Temperature [%.1f °C]"         <temperature>  (Zwave_Sensors, Sensor_Chart_Zwave)   { zwave="10:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=1" }
@@ -126,7 +126,7 @@ Number  Node_10_UV     			"Bathroom UV [%.1f]"        			 <temperature>  (Zwave_
 Number  Node_10_Lum     		"Bathroom Luminance [%.1f]"        	     <temperature>  (Zwave_Sensors)   { zwave="10:0:command=SENSOR_MULTILEVEL,SENSOR_TYPE=3" }
 Number  Node_10_BT     			"Bathroom Battery [%.1f]"            	 <temperature>  (Zwave_Sensors)   { zwave="10:0:command=BATTERY" }
 Contact Node_10_Motion     		"Bathroom Motion [MAP(en.map):%s]"	     <temperature>  (Zwave_Sensors)   { zwave="10:0:command=SENSOR_BINARY,sensor_type=12,respond_to_basic=TRUE" }
-Contact Node_10_Tamper     		"Bathroom Tamper [MAP(en.map):%s]"	     <temperature>  (Zwave_Sensors)   { zwave="10:0:command=SENSOR_BINARY,sensor_type=8,respond_to_basic=TRUE" }
+Contact Node_10_Tamper     		"Bathroom Tamper [MAP(en.map):%s]"	     <temperature>  (Zwave_Sensors)   { zwave="10:0:command=SENSOR_ALARM,respond_to_basic=TRUE" }
 DateTime Node_10_Temp_LastUpdate "Last Update (Bathroom) [%1$ta %1$tR]"  <clock>
 
 Number Sensor_Chart_Period			"Sensor Chart Period"
