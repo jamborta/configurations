@@ -96,7 +96,6 @@ sitemap default label="Elizabeth House"
 				Text item=Node_2_Temp valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_2_UV valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_2_Motion
-				Text item=Node_2_Tamper
 			}
 			Frame label="Bedroom"{ 
 				Text item=Node_3_Hum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
@@ -104,7 +103,6 @@ sitemap default label="Elizabeth House"
 				Text item=Node_3_Temp valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_3_UV valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_3_Motion
-				Text item=Node_3_Tamper
 			}
 			Frame label="Guest Room"{ 
 				Text item=Node_9_Hum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
@@ -112,7 +110,6 @@ sitemap default label="Elizabeth House"
 				Text item=Node_9_Temp valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_9_UV valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_9_Motion
-				Text item=Node_9_Tamper
 			}
 			Frame label="Bathroom"{ 
 				Text item=Node_10_Hum valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
@@ -120,7 +117,6 @@ sitemap default label="Elizabeth House"
 				Text item=Node_10_Temp valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_10_UV valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
 				Text item=Node_10_Motion
-				Text item=Node_10_Tamper				
 			}
 			Frame{
 				Text item=Sensor_LastUpdate_AA visibility=[Sensor_LastUpdate_AA>1400] valuecolor=[Sensor_LastUpdate_AA>1700="orange", Sensor_LastUpdate_AA>2000="red"]
