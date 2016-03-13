@@ -149,34 +149,6 @@ then
 	postUpdate(Node_10_Temp_LastUpdate, new DateTimeType())
 end
 
-rule "Tamper alarm"
-when
-	Item Node_2_Tamper changed from CLOSED to OPEN
-then
-	sendBroadcastNotification("Tamper alert: Living Room")
-end
-
-rule "Tamper alarm"
-when
-	Item Node_3_Tamper changed from CLOSED to OPEN
-then
-	sendBroadcastNotification("Tamper alert: Bedroom")
-end
-
-rule "Tamper alarm"
-when
-	Item Node_9_Tamper changed from CLOSED to OPEN
-then
-	sendBroadcastNotification("Tamper alert: Guest Room")
-end
-
-rule "Tamper alarm"
-when
-	Item Node_10_Tamper changed from CLOSED to OPEN
-then
-	sendBroadcastNotification("Tamper alert: Bathroom")
-end
-
 rule "Temp Update"
 when
     Item Sensor received update
